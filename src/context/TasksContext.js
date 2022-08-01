@@ -1,21 +1,20 @@
 import React, { useState, useContext } from "react";
 
 const TasksContext = React.createContext();
-const AddTaskProvider = React.createContext();
+const ActiveTaskContext = React.createContext();
 
 export const useTasksContext = () => useContext(TasksContext);
+export const useActiveTaskContext = () => useContext(ActiveTaskContext);
 
 export default function TasksProvider({ children }) {
   const [tasks, setTasks] = useState([]);
+  const [activeTask, setActiveTask] = useState(null);
 
-  function addTask(task) {
-    setTasks((prev) => [...prev, task]);
-  }
   return (
     <TasksContext.Provider value={[tasks, setTasks]}>
-      <AddTaskProvider.Provider value={addTask}>
+      <ActiveTaskContext.Provider value={[activeTask, setActiveTask]}>
         {children}
-      </AddTaskProvider.Provider>
+      </ActiveTaskContext.Provider>
     </TasksContext.Provider>
   );
 }

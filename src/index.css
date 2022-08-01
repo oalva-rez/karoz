@@ -1,13 +1,85 @@
+@font-face {
+  font-family: "PlusJakartaSans";
+  font-weight: 500;
+  src: local("PlusJakartaSans"),
+    url(../src/assets/PlusJakartaSans-Medium.woff) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+@font-face {
+  font-family: "PlusJakartaSans";
+  font-weight: 700;
+  src: local("PlusJakartaSans"),
+    url(../src/assets/PlusJakartaSans-Bold.woff) format("woff");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  display: grid;
+  grid-template: 97px 1fr / 300px 1fr;
+  min-height: 100vh;
+
+  font-family: "PlusJakartaSans", sans-serif;
+  font-weight: 500;
+
+  --main-purple: #635fc7;
+  --main-purple-hover: #a8a4ff;
+  --black: #000112;
+  --very-dark-gray: #20212c;
+  --dark-gray: #2b2c37;
+  --lines-dark: #3e3f4e;
+  --medium-gray: #828fa3;
+  --lines-light: #e4ebfa;
+  --light-gray: #f4f7fd;
+  --white: #fff;
+  --red: #ea5555;
+  --red-hover: #ff9898;
+
+  --border-light: 1px solid var(--lines-light);
+  --border-dark: 1px solid var(--lines-dark);
+
+  --left-margin: 30px;
+}
+
+.header {
+  grid-area: 1 / 2 / 1 / -1;
+  display: flex;
+  border-bottom: var(--border-light);
+}
+.header--logo {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: var(--left-margin);
+  border-right: var(--border-light);
+
+  font-weight: 700;
+}
+.header--logo img {
+  padding: 0;
+  margin: 0;
+}
+.sidebar {
+  grid-area: 2 / 1 / -1 / 1;
+  border-right: var(--border-light);
+}
+
+.active-board {
+  grid-area: 2 / 2 / -1 / -1;
 }

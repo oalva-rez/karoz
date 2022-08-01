@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
-import CurrentBoard from "./components/CurrentBoard/CurrentBoard";
+import ActiveBoard from "./components/ActiveBoard/ActiveBoard";
 import { AppContextProvider } from "./context/AppContextProvider";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
     <AppContextProvider>
       <Header />
       <Sidebar />
-      <CurrentBoard />
+      <ActiveBoard />
     </AppContextProvider>
   );
 }
