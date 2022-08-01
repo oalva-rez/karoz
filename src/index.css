@@ -3,16 +3,12 @@
   font-weight: 500;
   src: local("PlusJakartaSans"),
     url(../src/assets/PlusJakartaSans-Medium.woff) format("woff");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }
 @font-face {
   font-family: "PlusJakartaSans";
   font-weight: 700;
   src: local("PlusJakartaSans"),
     url(../src/assets/PlusJakartaSans-Bold.woff) format("woff");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }
 
 body {
@@ -53,28 +49,16 @@ code {
   --border-light: 1px solid var(--lines-light);
   --border-dark: 1px solid var(--lines-dark);
 
-  --left-margin: 30px;
+  --btn-radius: 24px;
+  --main-margin: 30px;
 }
 
-.header {
-  grid-area: 1 / 2 / 1 / -1;
-  display: flex;
-  border-bottom: var(--border-light);
+.settings {
+  width: 5px;
+  height: 20px;
+  cursor: pointer;
 }
-.header--logo {
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: var(--left-margin);
-  border-right: var(--border-light);
 
-  font-weight: 700;
-}
-.header--logo img {
-  padding: 0;
-  margin: 0;
-}
 .sidebar {
   grid-area: 2 / 1 / -1 / 1;
   border-right: var(--border-light);

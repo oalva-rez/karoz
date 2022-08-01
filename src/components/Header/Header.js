@@ -14,7 +14,7 @@ function Header() {
       </div>
       <header className="header">
         <BoardName />
-        <button className="main-button">+Add New Task</button>
+        <button className="header--main-button">+ Add New Task</button>
         <Settings />
       </header>
     </>

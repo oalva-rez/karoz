@@ -1,7 +1,10 @@
 import React from "react";
+import { useActiveBoardContext } from "../../context/BoardsContext";
 
 function BoardName() {
-  return <div>BoardName</div>;
+  const [activeBoard, setActiveBoard] = useActiveBoardContext();
+
+  return <div className="header--active-board">Active Board</div>;
 }
 
 export default BoardName;
