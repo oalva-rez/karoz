@@ -17,8 +17,11 @@
   gap: 12px;
   margin-left: var(--main-margin);
   border-right: var(--border-light);
-
+}
+.header--company {
   font-weight: 700;
+  font-size: 34px;
+  margin: 0;
 }
 .header--active-board {
   font-weight: 700;

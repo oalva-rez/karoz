@@ -24,16 +24,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.wrapper {
-  display: grid;
-  grid-template: 97px 1fr / 300px 1fr;
-  max-height: 100vh;
-  max-width: 100vw;
-
-  font-family: "PlusJakartaSans", sans-serif;
-  font-weight: 500;
-
+:root {
   --main-purple: #635fc7;
   --main-purple-hover: #a8a4ff;
   --black: #000112;
@@ -58,6 +49,17 @@ code {
 
   --main-margin: 30px;
   --tile-padding: 20px;
+  --header-height: 97px;
+  --sidebar-width: 300px;
+}
+.wrapper {
+  display: grid;
+  grid-template: var(--header-height) 1fr / var(--sidebar-width) 1fr;
+  max-height: 100vh;
+  max-width: 100vw;
+
+  font-family: "PlusJakartaSans", sans-serif;
+  font-weight: 500;
 }
 button:focus,
 button:active {
