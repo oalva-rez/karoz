@@ -7,20 +7,22 @@ import logoMobile from "../../assets/logo-mobile.svg";
 import { useShowModalContext } from "../../context/ShowModalContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
+import { useHideSidebarContext } from "../../context/HideSidebarContext";
 
 function Header() {
   const [showModal, setShowModal] = useShowModalContext();
-  const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
+  const [hideSidebar, setHideSidebar] = useHideSidebarContext();
 
   const [showSettings, setShowSettings] = useState(false);
-
   return (
     <>
-      <div className="header--logo">
-        <img src={logoLight} alt="logo" />
-        <h1 className="header--company">Karoz</h1>
-      </div>
+      {!hideSidebar ? (
+        <div className="header--logo">
+          <img src={logoLight} alt="logo" />
+          <h1 className="header--company">Karoz</h1>
+        </div>
+      ) : null}
       <header className="header">
         <BoardName />
         <button

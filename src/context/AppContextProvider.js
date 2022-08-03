@@ -4,6 +4,7 @@ import TasksProvider from "./TasksContext";
 import BoardsProvider from "./BoardsContext";
 import ColumnsProvider from "./ColumnsContext";
 import ShowModalProvider from "./ShowModalContext";
+import HideSidebarProvider from "./HideSidebarContext";
 
 import { combineComponents } from "./combineComponents";
 
@@ -13,5 +14,6 @@ const providers = [
   BoardsProvider,
   ColumnsProvider,
   ShowModalProvider,
+  HideSidebarProvider,
 ];
 export const AppContextProvider = combineComponents(...providers);

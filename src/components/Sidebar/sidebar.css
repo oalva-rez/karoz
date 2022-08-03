@@ -123,11 +123,13 @@ input:checked + .slider:before {
 }
 
 /* hide sidebar */
-
+.hide-sidebar {
+  grid-template: 97px 1fr / 0px 1fr;
+}
 .sidebar--hide-sidebar {
   display: flex;
-  margin: var(--main-margin) 20px var(--main-margin) 0px;
-  padding-left: var(--main-margin);
+  margin: 10px 20px var(--main-margin) 0px;
+  padding: 11px 0px 11px var(--main-margin);
   border-top-right-radius: var(--board-radius);
   border-bottom-right-radius: var(--board-radius);
   display: flex;

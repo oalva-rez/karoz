@@ -9,11 +9,14 @@ import DeleteBoardModal from "./modals/DeleteBoardModal";
 import EditBoardModal from "./modals/EditBoardModal";
 import EditTaskModal from "./modals/EditTaskModal";
 import ViewTaskModal from "./modals/ViewTaskModal";
+import showSidebarIcon from "./assets/icon-show-sidebar.svg";
 import { useShowModalContext } from "./context/ShowModalContext";
+import { useHideSidebarContext } from "./context/HideSidebarContext";
 
 export default function App() {
   const [showModal, setShowModal] = useShowModalContext();
   const [activeModal, setActiveModal] = useState(null);
+  const [hideSidebar, setHideSidebar] = useHideSidebarContext();
 
   function hideModal() {
     setActiveModal(null);
@@ -54,10 +57,27 @@ export default function App() {
     }
   }, [showModal]);
   return (
-    <div className="wrapper">
+    <div
+      className="wrapper"
+      style={
+        hideSidebar
+          ? {
+              gridTemplate: "97px 1fr / 0px 1fr",
+            }
+          : null
+      }
+    >
       <Header />
       <Sidebar />
       <ActiveBoard />
+      {hideSidebar && (
+        <div
+          className="show-sidebar-icon"
+          onClick={() => setHideSidebar((prev) => !prev)}
+        >
+          <img src={showSidebarIcon} alt="show sidebar" />
+        </div>
+      )}
       {activeModal}
     </div>
   );

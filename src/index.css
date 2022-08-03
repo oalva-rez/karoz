@@ -63,7 +63,22 @@ button:active {
 .disabled {
   background-color: #a9a4ff82 !important;
 }
+.hide {
+  display: none;
+}
 
 .active-board {
   grid-area: 2 / 2 / -1 / -1;
+}
+.show-sidebar-icon {
+  background-color: var(--main-purple-hover);
+  width: 56px;
+  height: 48px;
+  position: fixed;
+  bottom: 40px;
+  border-top-right-radius: var(--board-radius);
+  border-bottom-right-radius: var(--board-radius);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
 }
