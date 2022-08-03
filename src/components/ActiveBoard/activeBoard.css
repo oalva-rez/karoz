@@ -1,0 +1,61 @@
+.active-board {
+  display: flex;
+  padding: var(--tile-padding);
+  gap: var(--tile-padding);
+  background-color: var(--light-gray);
+  overflow-x: auto;
+  max-width: 100%;
+}
+/* column */
+.column--heading {
+  color: var(--medium-gray);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  margin-bottom: var(--tile-padding);
+
+  display: flex;
+  align-items: center;
+}
+.color-code {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.new-column {
+  display: grid;
+  place-content: center;
+  background-color: var(--medium-gray-transparent);
+  color: var(--medium-gray);
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: var(--tile-radius);
+  min-width: 280px;
+  cursor: pointer;
+}
+/* tasks */
+.tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tile-padding);
+}
+.tasks--item {
+  padding: var(--tile-padding);
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  min-width: 280px;
+}
+.tasks--item-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+.subtasks-completed {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-gray);
+}

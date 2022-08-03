@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./components/Header/header.css";
 import "./components/Sidebar/sidebar.css";
+import "./components/ActiveBoard/activeBoard.css";
 import App from "./App";
 import { AppContextProvider } from "./context/AppContextProvider";
 

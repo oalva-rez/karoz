@@ -4,6 +4,9 @@ function ActiveBoard() {
   return (
     <main className="active-board">
       <Column />
+      <div className="new-column">
+        <div>+ New Column</div>
+      </div>
     </main>
   );
 }

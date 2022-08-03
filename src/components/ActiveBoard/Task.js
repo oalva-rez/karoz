@@ -8,8 +8,8 @@ function Task({ column }) {
 
   // get matching tasks from column id
   const tasksForColumn = tasks.filter((task) => task.columnId === column.id);
-  // count how many subtasks iscompleted in task
 
+  // count how many subtasks isCompleted in task
   function getNumberTasksCompleted(task) {
     console.log(task);
     return task.subTasks.filter((t) => t.isCompleted === true).length;
@@ -19,7 +19,7 @@ function Task({ column }) {
     <div className="tasks">
       {tasksForColumn.map((task) => (
         <div key={task.id} className="tasks--item">
-          <div className="task--item-title">{task.title}</div>
+          <div className="tasks--item-title">{task.title}</div>
           <div className="subtasks-completed">
             {`${getNumberTasksCompleted(task)} of ${
               task.subTasks.length
