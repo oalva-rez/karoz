@@ -28,6 +28,18 @@
 .subtask-input img {
   cursor: pointer;
 }
+.subtask-err {
+  position: absolute;
+  width: 110px;
+  left: 103px;
+  border-radius: var(--tile-radius);
+  border-top-left-radius: 2px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+  background-color: #fecece;
+  color: var(--red);
+  font-weight: 500;
+}
 label {
   margin: 0 0 8px 0;
   padding: 0;
@@ -46,7 +58,9 @@ select {
   border-radius: 4px;
   border: 1px solid var(--input-border-color);
   resize: none;
-  padding-left: var(--placeholder-padding);
+  padding: 0 var(--placeholder-padding);
+  cursor: pointer;
+  outline: none;
 }
 .add-task-form textarea {
   padding-top: var(--placeholder-padding);

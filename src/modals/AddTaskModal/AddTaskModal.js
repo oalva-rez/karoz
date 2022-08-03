@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useShowModalContext } from "./../../context/ShowModalContext";
@@ -7,6 +7,9 @@ import { nanoid } from "nanoid";
 
 function AddTaskModal(props) {
   const [showModal, setShowModal] = useShowModalContext();
+
+  // MAKE COLUMN NAMES APPEAR ON SELECT INPUT
+
   const [subtaskErr, setSubtaskErr] = useState(false);
   const [taskInput, setTaskInput] = useState({});
   function handleChange(e) {
@@ -55,6 +58,16 @@ function AddTaskModal(props) {
       />
     </div>,
   ]);
+
+  // throw error if user tries to add more than 6 subtasks
+  useEffect(() => {
+    if (subTaskInputs.length < 6) {
+      setSubtaskErr(false);
+    } else {
+      setSubtaskErr(true);
+    }
+  }, [subTaskInputs]);
+
   function deleteSubtaskInput(event, id) {
     setSubTaskInputs((prev) => {
       return prev.filter((input) => {
@@ -77,7 +90,7 @@ function AddTaskModal(props) {
         return [
           ...prev,
           <div className="subtask-input" key={id}>
-            <input type="text" name={id} />
+            <input type="text" name={id} placeholder="New Subtask" />
             <img
               src={deleteIcon}
               alt="delete"
@@ -88,11 +101,8 @@ function AddTaskModal(props) {
             />
           </div>,
         ];
-      } else {
-        // throw error if user tries to add more than 6 subtasks
-        setSubtaskErr(true);
-        return prev;
       }
+      return prev;
     });
   }
 
@@ -123,7 +133,14 @@ function AddTaskModal(props) {
             recharge the batteries a little."
             rows={6}
           />
-          <label htmlFor="subtasks">Subtasks</label>
+          <label htmlFor="subtasks">
+            Subtasks
+            {subtaskErr ? (
+              <div className="subtask-err">
+                Cannot create more than 6 subtasks.
+              </div>
+            ) : null}
+          </label>
           {subTaskInputs}
           <button
             onClick={(e) => {
