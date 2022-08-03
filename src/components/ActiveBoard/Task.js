@@ -11,7 +11,6 @@ function Task({ column }) {
 
   // count how many subtasks isCompleted in task
   function getNumberTasksCompleted(task) {
-    console.log(task);
     return task.subTasks.filter((t) => t.isCompleted === true).length;
   }
 

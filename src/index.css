@@ -33,7 +33,9 @@ code {
   --lines-dark: #3e3f4e;
   --medium-gray: #828fa3;
   --medium-gray-transparent: #828fa327;
-
+  --input-border-color: rgb(202, 202, 202);
+  --btn-secondary-color: rgba(99, 95, 199, 0.1);
+  --btn-secondary-hover-color: rgba(99, 95, 199, 0.25);
   --lines-light: #e4ebfa;
   --light-gray: #f4f7fd;
   --white: #fff;
@@ -47,6 +49,7 @@ code {
   --tile-radius: 8px;
   --board-radius: 30px;
 
+  --placeholder-padding: 10px;
   --main-margin: 30px;
   --tile-padding: 20px;
   --header-height: 97px;
