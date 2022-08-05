@@ -3,27 +3,37 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
+import { useTasksContext } from "../../context/TasksContext";
 import deleteIcon from "../../assets/icon-cross.svg";
+import deleteIconRed from "../../assets/icon-cross-red.svg";
 import { nanoid } from "nanoid";
 
 function AddTaskModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
-  const [subtaskErr, setSubtaskErr] = useState(false);
-  const [taskInput, setTaskInput] = useState({
-    title: "",
+  const [tasks, setTasks] = useTasksContext();
+  const [errors, setErrors] = useState({
+    titleValue: false,
+    descriptionValue: false,
+    statusValue: false,
   });
 
   // ids for subtask inputs
   const id1 = nanoid();
   const id2 = nanoid();
+  const [inputData, setInputData] = useState({
+    title: "",
+    description: "",
+    subtasks: { [id1]: "", [id2]: "" },
+  });
+  const [subtaskErr, setSubtaskErr] = useState(false);
   const [subTaskInputs, setSubTaskInputs] = useState([
     <div className="subtask-input" key={id1}>
       <input
         type="text"
         name={id1}
         placeholder="e.g Make coffee"
-        value={taskInput[id1]}
+        value={inputData[id1]}
         onChange={handleChange}
         id="subtask"
       />
@@ -41,7 +51,7 @@ function AddTaskModal(props) {
         type="text"
         name={id2}
         placeholder="eg. Drink coffee & smile"
-        value={taskInput[id2]}
+        value={inputData[id2]}
         onChange={handleChange}
         id="subtask"
       />
@@ -55,14 +65,29 @@ function AddTaskModal(props) {
       />
     </div>,
   ]);
-
   // get column names from active board
   const columnObjs = columns.filter(
     (column) => column.boardId === activeBoard.id
   );
 
+  function isFormValid() {
+    let isValid = true;
+    if (inputData.title === "") {
+      setErrors((err) => ({ ...err, titleValue: true }));
+      isValid = false;
+    }
+    if (inputData.description === "") {
+      setErrors((err) => ({ ...err, descriptionValue: true }));
+      isValid = false;
+    }
+    if (inputData.status === undefined) {
+      setErrors((err) => ({ ...err, statusValue: true }));
+      isValid = false;
+    }
+    return isValid;
+  }
   function handleChange(e) {
-    setTaskInput((prev) => {
+    setInputData((prev) => {
       if (e.target.id === "subtask") {
         return {
           ...prev,
@@ -82,19 +107,19 @@ function AddTaskModal(props) {
     setSubTaskInputs((prev) => {
       return prev.filter((input) => input.key !== id);
     });
-    setTaskInput((prev) => {
+    setInputData((prev) => {
       // delete key and value from subtasks object
       const copy = { ...prev };
       delete copy.subtasks[id];
       return copy;
     });
   }
-  console.log(taskInput);
+
   function addSubtaskInput(e) {
     e.preventDefault();
     setSubTaskInputs((prev) => {
-      // limit user to 6 subtasks
-      if (prev.length < 6) {
+      // limit user to 10 subtasks
+      if (prev.length < 10) {
         const id = nanoid();
         return [
           ...prev,
@@ -104,7 +129,7 @@ function AddTaskModal(props) {
               name={id}
               placeholder="New Subtask"
               id="subtask"
-              value={taskInput[id]}
+              value={inputData[id]}
               onChange={handleChange}
             />
             <img
@@ -121,15 +146,41 @@ function AddTaskModal(props) {
       return prev;
     });
   }
-
-  // throw error if user tries to add more than 6 subtasks
-  useEffect(() => {
-    if (subTaskInputs.length < 6) {
+  function checkNumOfSubtasks() {
+    if (subTaskInputs.length < 10) {
       setSubtaskErr(false);
     } else {
       setSubtaskErr(true);
+      setTimeout(() => {
+        setSubtaskErr(false);
+      }, 3000);
     }
-  }, [subTaskInputs]);
+  }
+  function addTaskToColumn() {
+    const formattedSubtasks = Object.entries(inputData.subtasks)
+      .map(([key, value]) => {
+        return {
+          title: value,
+          isCompleted: false,
+        };
+      })
+      .filter((subtask) => subtask.title !== "");
+
+    const column = columnObjs.find(
+      (column) => column.title === inputData.status
+    );
+    const newTask = {
+      id: nanoid(),
+      title: inputData.title,
+      desc: inputData.description,
+      columnId: column.id,
+      boardId: activeBoard.id,
+      subTasks: formattedSubtasks,
+    };
+    setTasks((prev) => {
+      return [...prev, newTask];
+    });
+  }
   return (
     <Modal
       {...props}
@@ -148,7 +199,8 @@ function AddTaskModal(props) {
             id="title"
             placeholder="e.g Take coffee break"
             onChange={handleChange}
-            value={taskInput.title}
+            value={inputData.title}
+            className={errors.titleValue ? "input-err" : ""}
           />
           <label htmlFor="description">Description</label>
           <textarea
@@ -158,21 +210,23 @@ function AddTaskModal(props) {
             placeholder="e.g. It’s always good to take a break. This 15 minute break will 
             recharge the batteries a little."
             rows={6}
-            value={taskInput.description}
+            value={inputData.description}
             onChange={handleChange}
+            className={errors.descriptionValue ? "input-err" : ""}
           />
           <label htmlFor="subtasks">
             Subtasks
-            {subtaskErr ? (
-              <div className="subtask-err">
-                Cannot create more than 6 subtasks.
-              </div>
-            ) : null}
+            <div
+              className={subtaskErr ? "subtask-err show-err" : "subtask-err"}
+            >
+              Cannot create more than 10 subtasks.
+            </div>
           </label>
           {subTaskInputs}
           <button
             onClick={(e) => {
               addSubtaskInput(e);
+              checkNumOfSubtasks();
             }}
             className="add-subtask-btn"
           >
@@ -182,9 +236,10 @@ function AddTaskModal(props) {
           <select
             name="status"
             id="status"
-            value={taskInput.status}
+            value={inputData.status}
             onChange={handleChange}
             defaultValue={"default"}
+            className={errors.statusValue ? "input-err" : ""}
           >
             <option value="default" disabled>
               Select a Column
@@ -201,7 +256,10 @@ function AddTaskModal(props) {
             className="create-task-btn"
             onClick={(e) => {
               e.preventDefault();
-              props.onHide();
+              if (isFormValid()) {
+                addTaskToColumn();
+                props.onHide();
+              }
             }}
           >
             Create Task

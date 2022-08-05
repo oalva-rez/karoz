@@ -30,6 +30,8 @@
 }
 .subtask-err {
   position: absolute;
+  visibility: hidden;
+  opacity: 0;
   width: 110px;
   left: 103px;
   border-radius: var(--tile-radius);
@@ -40,6 +42,7 @@
   color: var(--red);
   font-weight: 500;
 }
+
 label {
   margin: 0 0 8px 0;
   padding: 0;
@@ -47,6 +50,9 @@ label {
   color: var(--medium-gray);
   font-size: 13px;
   font-weight: 700;
+}
+.input-err {
+  border: 1px solid var(--red) !important;
 }
 #title,
 select {

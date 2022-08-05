@@ -73,9 +73,13 @@ button:active {
   background-color: #a9a4ff82 !important;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
-
+.show-err {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.2s ease-in-out;
+}
 .active-board {
   grid-area: 2 / 2 / -1 / -1;
 }
