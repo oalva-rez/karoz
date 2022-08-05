@@ -96,6 +96,9 @@ select {
   color: var(--white);
   margin-bottom: var(--main-margin);
 }
+.subtask-delete:hover {
+  background: url(../../assets/icon-cross-red.svg) no-repeat center center;
+}
 .add-subtask-btn:hover {
   background-color: var(--btn-secondary-hover-color);
 }

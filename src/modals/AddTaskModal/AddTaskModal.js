@@ -12,6 +12,7 @@ function AddTaskModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
   const [tasks, setTasks] = useTasksContext();
+  const [subtaskErr, setSubtaskErr] = useState(false);
   const [errors, setErrors] = useState({
     titleValue: false,
     descriptionValue: false,
@@ -26,7 +27,6 @@ function AddTaskModal(props) {
     description: "",
     subtasks: { [id1]: "", [id2]: "" },
   });
-  const [subtaskErr, setSubtaskErr] = useState(false);
   const [subTaskInputs, setSubTaskInputs] = useState([
     <div className="subtask-input" key={id1}>
       <input
@@ -65,7 +65,8 @@ function AddTaskModal(props) {
       />
     </div>,
   ]);
-  // get column names from active board
+
+  // get columns from active board
   const columnObjs = columns.filter(
     (column) => column.boardId === activeBoard.id
   );
@@ -80,10 +81,12 @@ function AddTaskModal(props) {
       setErrors((err) => ({ ...err, descriptionValue: true }));
       isValid = false;
     }
+
     if (inputData.status === undefined) {
       setErrors((err) => ({ ...err, statusValue: true }));
       isValid = false;
     }
+
     return isValid;
   }
   function handleChange(e) {
@@ -175,12 +178,13 @@ function AddTaskModal(props) {
       desc: inputData.description,
       columnId: column.id,
       boardId: activeBoard.id,
-      subTasks: formattedSubtasks,
+      subtasks: formattedSubtasks,
     };
     setTasks((prev) => {
       return [...prev, newTask];
     });
   }
+
   return (
     <Modal
       {...props}
@@ -257,6 +261,12 @@ function AddTaskModal(props) {
             onClick={(e) => {
               e.preventDefault();
               if (isFormValid()) {
+                setErrors((prev) => ({
+                  ...prev,
+                  titleValue: false,
+                  descriptionValue: false,
+                  statusValue: false,
+                }));
                 addTaskToColumn();
                 props.onHide();
               }

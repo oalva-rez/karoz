@@ -14,7 +14,7 @@ export default function TasksProvider({ children }) {
       columnId: 1,
       boardId: 1,
       id: 1,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -36,7 +36,7 @@ export default function TasksProvider({ children }) {
       columnId: 1,
       boardId: 1,
       id: 2,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -58,7 +58,7 @@ export default function TasksProvider({ children }) {
       columnId: 1,
       boardId: 1,
       id: 3,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -80,7 +80,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 4,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -102,7 +102,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 5,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -124,7 +124,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 6,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -146,7 +146,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 7,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -168,7 +168,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 8,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -190,7 +190,7 @@ export default function TasksProvider({ children }) {
       columnId: 2,
       boardId: 1,
       id: 9,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -212,7 +212,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 10,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -234,7 +234,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 11,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -256,7 +256,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 12,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -278,7 +278,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 13,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -300,7 +300,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 14,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -322,7 +322,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 15,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -344,7 +344,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 16,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -366,7 +366,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 17,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
@@ -388,7 +388,7 @@ export default function TasksProvider({ children }) {
       columnId: 3,
       boardId: 1,
       id: 18,
-      subTasks: [
+      subtasks: [
         {
           title: "Build UI for onboarding flow",
           isCompleted: true,

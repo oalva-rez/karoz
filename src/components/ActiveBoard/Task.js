@@ -11,7 +11,7 @@ function Task({ column }) {
 
   // count how many subtasks isCompleted in task
   function getNumberTasksCompleted(task) {
-    return task.subTasks.filter((t) => t.isCompleted === true).length;
+    return task.subtasks.filter((t) => t.isCompleted === true).length;
   }
 
   return (
@@ -21,7 +21,7 @@ function Task({ column }) {
           <div className="tasks--item-title">{task.title}</div>
           <div className="subtasks-completed">
             {`${getNumberTasksCompleted(task)} of ${
-              task.subTasks.length
+              task.subtasks.length
             } subtasks completed`}
           </div>
         </div>
