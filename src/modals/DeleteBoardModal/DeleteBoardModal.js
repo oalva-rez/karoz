@@ -35,14 +35,14 @@ function DeleteBoardModal(props) {
   }
 
   return (
-    <div className="delete-board">
+    <div>
       <Modal
         {...props}
-        size="sm"
+        size="med"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Body>
+        <Modal.Body className="delete-board">
           <h4>Delete this board?</h4>
           <p>
             Are you sure you want to delete the {`'${activeBoard.title}'`}{" "}
@@ -51,7 +51,7 @@ function DeleteBoardModal(props) {
           </p>
           <div className="delete-board--buttons">
             <button
-              className="delete-board"
+              className="delete-action-button"
               onClick={() => {
                 deleteCurrentBoard();
                 props.onHide();
@@ -59,7 +59,10 @@ function DeleteBoardModal(props) {
             >
               Delete
             </button>
-            <button className="cancel-action" onClick={() => props.onHide()}>
+            <button
+              className="cancel-action-button"
+              onClick={() => props.onHide()}
+            >
               Cancel
             </button>
           </div>

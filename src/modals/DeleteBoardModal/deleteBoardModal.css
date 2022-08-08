@@ -1,0 +1,46 @@
+.delete-board {
+  padding: var(--main-margin);
+}
+.delete-board h4 {
+  color: var(--red);
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: var(--tile-padding);
+}
+.delete-board p {
+  color: var(--medium-gray);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--tile-padding);
+}
+
+.delete-board--buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.delete-board--buttons button {
+  width: 200px;
+  height: 40px;
+  border-radius: var(--btn-radius);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+.delete-action-button {
+  background-color: var(--red);
+  color: var(--white);
+}
+.cancel-action-button {
+  background-color: var(--btn-secondary-color);
+  color: var(--main-purple);
+}
+.delete-action-button:hover {
+  background-color: var(--red-hover);
+}
+.cancel-action-button:hover {
+  background-color: var(--btn-secondary-hover-color);
+}
