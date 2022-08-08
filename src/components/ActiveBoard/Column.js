@@ -24,7 +24,13 @@ function Column() {
           style={{ backgroundColor: `#${randomColorGenerator()}` }}
         ></div>
         {column.title} (
-        {tasks.filter((task) => task.columnId === column.id).length})
+        {
+          tasks.filter(
+            (task) =>
+              task.columnId === column.id && task.boardId === activeBoard.id
+          ).length
+        }
+        )
       </h3>
       <Task column={column} />
     </div>

@@ -5,9 +5,12 @@ import { useColumnsContext } from "../../context/ColumnsContext";
 
 function Task({ column }) {
   const [tasks, setTasks] = useTasksContext();
+  const [activeBoard, setActiveBoard] = useActiveBoardContext();
 
   // get matching tasks from column id
-  const tasksForColumn = tasks.filter((task) => task.columnId === column.id);
+  const tasksForColumn = tasks.filter(
+    (task) => task.columnId === column.id && task.boardId === activeBoard.id
+  );
 
   // count how many subtasks isCompleted in task
   function getNumberTasksCompleted(task) {

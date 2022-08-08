@@ -180,6 +180,7 @@ function AddTaskModal(props) {
       boardId: activeBoard.id,
       subtasks: formattedSubtasks,
     };
+    console.log(newTask);
     setTasks((prev) => {
       return [...prev, newTask];
     });
