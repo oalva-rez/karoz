@@ -165,6 +165,7 @@ function AddTaskModal(props) {
         return {
           title: value,
           isCompleted: false,
+          id: nanoid(),
         };
       })
       .filter((subtask) => subtask.title !== "");

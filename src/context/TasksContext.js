@@ -18,15 +18,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -40,15 +43,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -62,15 +68,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -84,15 +93,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -106,15 +118,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -128,15 +143,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -150,15 +168,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -172,15 +193,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -194,15 +218,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -216,15 +243,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -238,15 +268,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -260,15 +293,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -282,15 +318,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -304,15 +343,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -326,15 +368,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -348,15 +393,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -370,15 +418,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -391,16 +442,19 @@ export default function TasksProvider({ children }) {
       subtasks: [
         {
           title: "Build UI for onboarding flow",
-          isCompleted: true,
+          isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
-          isCompleted: true,
+          isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -414,15 +468,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -436,15 +493,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -458,15 +518,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -480,15 +543,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -502,15 +568,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -524,15 +593,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -546,15 +618,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -568,15 +643,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -590,15 +668,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -612,15 +693,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -634,15 +718,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -656,15 +743,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -678,15 +768,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -700,15 +793,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -722,15 +818,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -744,15 +843,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -766,15 +868,18 @@ export default function TasksProvider({ children }) {
         {
           title: "Build UI for onboarding flow",
           isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
           isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },
@@ -787,16 +892,19 @@ export default function TasksProvider({ children }) {
       subtasks: [
         {
           title: "Build UI for onboarding flow",
-          isCompleted: true,
+          isCompleted: false,
+          id: 1,
         },
         {
           title: "Finalize pricing model",
-          isCompleted: true,
+          isCompleted: false,
+          id: 2,
         },
         {
           title:
             "Talk to potential customers about our proposed solution and ask for fair price expectancy",
           isCompleted: false,
+          id: 3,
         },
       ],
     },

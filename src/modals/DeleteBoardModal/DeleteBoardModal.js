@@ -35,40 +35,37 @@ function DeleteBoardModal(props) {
   }
 
   return (
-    <div>
-      <Modal
-        {...props}
-        size="med"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Body className="delete-board">
-          <h4>Delete this board?</h4>
-          <p>
-            Are you sure you want to delete the {`'${activeBoard.title}'`}{" "}
-            board? This action will remove all columns and tasks and cannot be
-            reversed.
-          </p>
-          <div className="delete-board--buttons">
-            <button
-              className="delete-action-button"
-              onClick={() => {
-                deleteCurrentBoard();
-                props.onHide();
-              }}
-            >
-              Delete
-            </button>
-            <button
-              className="cancel-action-button"
-              onClick={() => props.onHide()}
-            >
-              Cancel
-            </button>
-          </div>
-        </Modal.Body>
-      </Modal>
-    </div>
+    <Modal
+      {...props}
+      size="med"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Body className="delete-board">
+        <h4>Delete this board?</h4>
+        <p>
+          Are you sure you want to delete the {`'${activeBoard.title}'`} board?
+          This action will remove all columns and tasks and cannot be reversed.
+        </p>
+        <div className="delete-board--buttons">
+          <button
+            className="delete-action-button"
+            onClick={() => {
+              deleteCurrentBoard();
+              props.onHide();
+            }}
+          >
+            Delete
+          </button>
+          <button
+            className="cancel-action-button"
+            onClick={() => props.onHide()}
+          >
+            Cancel
+          </button>
+        </div>
+      </Modal.Body>
+    </Modal>
   );
 }
 
