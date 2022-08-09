@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import settings from "../../assets/icon-vertical-ellipsis.svg";
 import { useActiveTaskContext } from "../../context/TasksContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useColumnsContext } from "../../context/ColumnsContext";
+import { useActiveBoardContext } from "../../context/BoardsContext";
+import { useShowModalContext } from "../../context/ShowModalContext";
 
 export default function ViewTaskModal(props) {
   const [activeTask, setActiveTask] = useActiveTaskContext();
   const [tasks, setTasks] = useTasksContext();
+  const [columns, setColumns] = useColumnsContext();
+  const [activeBoard, setActiveBoard] = useActiveBoardContext();
+  const [showModal, setShowModal] = useShowModalContext();
+  const [showSettings, setShowSettings] = useState(false);
 
   function getNumberTasksCompleted(task) {
     return task.subtasks.filter((t) => t.isCompleted === true).length;
   }
+  const columnObjects = columns.filter(
+    (column) => column.boardId === activeBoard.id
+  );
 
-  //update subtask on checkbox change
-  /**
-   * @param {Number} id subtask Id
-   */
   function updateSubtask(id) {
     const newTasks = tasks.map((task) => {
       if (task.id === activeTask.id) {
@@ -34,12 +41,25 @@ export default function ViewTaskModal(props) {
         setActiveTask(newTask);
         return newTask;
       }
-
       return task;
     });
     setTasks(newTasks);
   }
-
+  function updateTaskColumn(task, columnTitle) {
+    const newColumn = columnObjects.find(
+      (column) => column.title === columnTitle
+    );
+    const newTasks = tasks.map((t) => {
+      if (t.id === task.id) {
+        return {
+          ...t,
+          columnId: newColumn.id,
+        };
+      }
+      return t;
+    });
+    setTasks(newTasks);
+  }
   return (
     <Modal
       {...props}
@@ -48,41 +68,79 @@ export default function ViewTaskModal(props) {
       centered
     >
       <Modal.Body className="view-task">
-        <h4>{activeTask.title}</h4>
-        <p>{activeTask.desc}</p>
-        <h5>
-          Subtasks {getNumberTasksCompleted(activeTask)} of{" "}
-          {activeTask.subtasks.length}
+        {showSettings ? (
+          <ul className="dropdown-settings view-task--dropdown-settings">
+            <li
+              className="dropdown-item"
+              onClick={() => {
+                setShowSettings((prev) => !prev);
+                setShowModal("editTask");
+              }}
+            >
+              Edit Task
+            </li>
+            <li
+              className="dropdown-item"
+              onClick={() => {
+                setShowSettings((prev) => !prev);
+                setShowModal("deleteTask");
+              }}
+            >
+              Delete Board
+            </li>
+          </ul>
+        ) : null}
+        <h4 className="view-task--title">
+          {activeTask.title}
+          <img
+            src={settings}
+            alt="settings"
+            className="settings-img"
+            onClick={() => setShowSettings((prev) => !prev)}
+          />
+        </h4>
+        <p className="view-task--desc">{activeTask.desc}</p>
+        <h5 className="view-task--subtask-header">
+          Subtasks ({getNumberTasksCompleted(activeTask)} of{" "}
+          {activeTask.subtasks.length})
         </h5>
         <div className="view-task--subtasks">
           {activeTask.subtasks.map((subtask, index) => {
-            console.log(subtask.isCompleted);
             return (
-              <div key={index}>
+              <label
+                key={subtask.id}
+                className={
+                  subtask.isCompleted
+                    ? "view-task--subtask-item completed"
+                    : "view-task--subtask-item"
+                }
+              >
                 <input
                   type="checkbox"
                   name={`subtask${index}`}
                   checked={subtask.isCompleted ? true : false}
                   onChange={() => updateSubtask(subtask.id)}
                 />
-                <label>{subtask.title}</label>
-              </div>
+                <span class="checkmark"></span>
+                {subtask.title}
+              </label>
             );
           })}
         </div>
-        <h5>Current Status</h5>
+        <h5 className="view-task--status-header">Current Status</h5>
         <select
           name="status"
           id="status"
-          value={inputData.status}
-          onChange={handleChange}
-          defaultValue={"default"}
-          className={errors.statusValue ? "input-err" : ""}
+          className="view-task--status"
+          onChange={(event) => {
+            updateTaskColumn(activeTask, event.target.value);
+          }}
+          defaultValue={
+            columnObjects.find((column) => column.id === activeTask.columnId)
+              .title
+          }
         >
-          <option value="default" disabled>
-            Select a Column
-          </option>
-          {columnObjs.map((column) => {
+          {columnObjects.map((column) => {
             return (
               <option key={column.id} value={column.title}>
                 {column.title}

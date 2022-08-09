@@ -1,0 +1,119 @@
+.view-task {
+  padding: var(--main-margin);
+}
+.view-task--title {
+  font-weight: 700;
+  font-size: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--main-margin);
+}
+.view-task--desc {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 23px;
+  margin-bottom: var(--main-margin);
+  color: var(--medium-gray);
+}
+
+/* subtasks */
+.view-task--subtask-header {
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+.view-task--subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 10px 40px;
+  border-radius: 4px;
+  background-color: var(--light-gray);
+  margin-bottom: 5px;
+  color: black;
+  font-weight: 700;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+}
+.view-task--subtask-item:hover {
+  background-color: var(--btn-secondary-hover-color);
+}
+/* checkbox style */
+.view-task--subtask-item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  left: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(222, 222, 222);
+  border-radius: 3px;
+}
+.view-task--subtask-item:hover input ~ .checkmark {
+  background-color: #eee;
+}
+.view-task--subtask-item input:checked ~ .checkmark {
+  background-color: var(--main-purple);
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.view-task--subtask-item input:checked ~ .checkmark:after {
+  display: block;
+}
+.view-task--subtask-item .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* end checkbox style */
+
+/* settings dropdown */
+.completed {
+  color: var(--medium-gray) !important;
+  text-decoration: line-through;
+}
+.view-task--title img {
+  margin-left: 40px;
+}
+.view-task--dropdown-settings {
+  top: 68px;
+  right: 30px;
+}
+
+/* current status */
+
+.view-task--status-header {
+  color: black;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.view-task--status {
+  border-radius: 4px;
+  border: 1px solid var(--input-border-color);
+  resize: none;
+  padding: 0 var(--placeholder-padding);
+  cursor: pointer;
+  outline: none;
+  height: 40px;
+  width: 100%;
+  font-size: 15px;
+}

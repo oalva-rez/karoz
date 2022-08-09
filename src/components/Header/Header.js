@@ -39,11 +39,11 @@ function Header() {
         <img
           src={settings}
           alt="settings"
-          className="header--settings"
+          className="settings-img"
           onClick={() => setShowSettings((prev) => !prev)}
         />
         {showSettings ? (
-          <ul className="header--dropdown-settings">
+          <ul className="dropdown-settings header--dropdown-settings">
             <li
               className="dropdown-item"
               onClick={() => {

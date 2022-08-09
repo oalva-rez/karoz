@@ -67,7 +67,7 @@ function AddTaskModal(props) {
   ]);
 
   // get columns from active board
-  const columnObjs = columns.filter(
+  const columnObjects = columns.filter(
     (column) => column.boardId === activeBoard.id
   );
 
@@ -170,7 +170,7 @@ function AddTaskModal(props) {
       })
       .filter((subtask) => subtask.title !== "");
 
-    const column = columnObjs.find(
+    const column = columnObjects.find(
       (column) => column.title === inputData.status
     );
     const newTask = {
@@ -250,7 +250,7 @@ function AddTaskModal(props) {
             <option value="default" disabled>
               Select a Column
             </option>
-            {columnObjs.map((column) => {
+            {columnObjects.map((column) => {
               return (
                 <option key={column.id} value={column.title}>
                   {column.title}

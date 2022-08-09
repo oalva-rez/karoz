@@ -95,3 +95,36 @@ button:active {
   place-content: center;
   cursor: pointer;
 }
+
+/* dropdown settings */
+.settings-img {
+  width: max-content;
+  height: max-content;
+  padding: 12px 12px;
+
+  cursor: pointer;
+}
+.dropdown-settings {
+  position: absolute;
+  height: 94px;
+  width: 192px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: var(--tile-radius);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: var(--white);
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+  gap: 8px;
+}
+.dropdown-item:nth-child(1) {
+  color: var(--medium-gray);
+  cursor: pointer;
+}
+.dropdown-item:nth-child(2) {
+  color: var(--red);
+  cursor: pointer;
+}
