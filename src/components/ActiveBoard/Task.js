@@ -19,7 +19,6 @@ function Task({ column }) {
   function getNumberTasksCompleted(task) {
     return task.subtasks.filter((t) => t.isCompleted === true).length;
   }
-
   return (
     <div className="tasks">
       {tasksForColumn.map((task) => (

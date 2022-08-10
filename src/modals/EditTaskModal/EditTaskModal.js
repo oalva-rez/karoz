@@ -38,12 +38,13 @@ function EditTaskModal(props) {
   function getSubtaskObject() {
     const subtasks = {};
     activeTask.subtasks.forEach((subtask) => {
-      subtasks[subtask.id] = subtask.title;
+      subtasks[subtask.id] = {
+        title: subtask.title,
+        isCompleted: subtask.isCompleted,
+      };
     });
-
     return subtasks;
   }
-
   function isFormValid() {
     let isValid = true;
     if (inputData.title === "") {
@@ -68,7 +69,10 @@ function EditTaskModal(props) {
           ...prev,
           subtasks: {
             ...prev.subtasks,
-            [e.target.name]: e.target.value,
+            [e.target.name]: {
+              ...prev.subtasks[e.target.name],
+              title: e.target.value,
+            },
           },
         };
       }
@@ -114,12 +118,12 @@ function EditTaskModal(props) {
     }
   }
 
-  function addTaskToColumn() {
+  function updateTaskInColumn() {
     const formattedSubtasks = Object.entries(inputData.subtasks)
       .map(([key, value]) => {
         return {
-          title: value,
-          isCompleted: false,
+          title: value.title,
+          isCompleted: value.isCompleted,
           id: key,
         };
       })
@@ -187,7 +191,7 @@ function EditTaskModal(props) {
                   type="text"
                   name={key}
                   placeholder="e.g Make coffee"
-                  value={value}
+                  value={value.title}
                   onChange={handleChange}
                   id="subtask"
                 />
@@ -238,7 +242,7 @@ function EditTaskModal(props) {
                   descriptionValue: false,
                   statusValue: false,
                 }));
-                addTaskToColumn();
+                updateTaskInColumn();
                 props.onHide();
               }
             }}

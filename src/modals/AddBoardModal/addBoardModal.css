@@ -1,22 +1,13 @@
-.modal-title {
-  padding: 0 0 20px var(--main-margin);
-  color: black;
-  font-size: 24px;
-  font-weight: 700;
-}
-.input-err {
-  border: 1px solid var(--red) !important;
-}
-.add-task-form {
+.add-board-form {
   display: flex;
   flex-direction: column;
   padding: 0 var(--main-margin);
 }
-.add-task-form label:not(:first-child),
-.add-task-form button {
+.add-board-form label:not(:first-child),
+.add-board-form button {
   margin-top: 15px;
 }
-.add-task-form label {
+.add-board-form label {
   margin: 0 0 8px 0;
   padding: 0;
 
@@ -24,44 +15,35 @@
   font-size: 13px;
   font-weight: 700;
 }
-#title,
-select {
-  height: 40px;
-}
-.add-task-form input,
-.add-task-form textarea,
-.add-task-form select {
+
+.add-board-form input {
   border-radius: 4px;
   border: 1px solid var(--input-border-color);
   resize: none;
   padding: 0 var(--placeholder-padding);
   cursor: pointer;
   outline: none;
+  height: 40px;
 }
-.add-task-form textarea {
-  padding-top: var(--placeholder-padding);
-}
-.add-task-form input:focus,
-.add-task-form textarea:focus {
+.add-board-form input:focus {
   border: 2px solid var(--main-purple);
   outline: none;
 }
-.subtask-input {
+.column-input {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
-.subtask-input:not(:first-child) {
-  margin-top: 10px;
-}
-.subtask-input input {
+
+.column-input input {
   flex: 1;
   height: 40px;
 }
-.subtask-input img {
+.column-input img {
   cursor: pointer;
 }
-.subtask-err {
+.columns-err {
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -75,10 +57,7 @@ select {
   color: var(--red);
   font-weight: 500;
 }
-
-/* buttons */
-
-.add-task-form button {
+.add-board-form button {
   height: 40px;
   border-radius: var(--btn-radius);
   outline: none;
@@ -87,20 +66,18 @@ select {
   font-size: 13px;
   font-weight: 700;
 }
-
-.add-subtask-btn {
+.add-column-btn {
   background-color: var(--btn-secondary-color);
   color: var(--main-purple);
 }
-.create-task-btn {
+.create-column-btn {
   background-color: var(--main-purple);
   color: var(--white);
   margin-bottom: var(--main-margin);
 }
-
-.add-subtask-btn:hover {
+.add-column-btn:hover {
   background-color: var(--btn-secondary-hover-color);
 }
-.create-task-btn:hover {
+.create-column-btn:hover {
   background-color: var(--main-purple-hover);
 }

@@ -3,10 +3,12 @@ import iconBoard from "../../assets/icon-board.svg";
 import iconBoardPurple from "../../assets/icon-board-purple.svg";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
+import { useShowModalContext } from "../../context/ShowModalContext";
 
 function BoardSelect() {
   const [boards, setBoards] = useBoardsContext();
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
+  const [showModal, setShowModal] = useShowModalContext();
 
   function selectBoard(title, id) {
     setActiveBoard({ title, id });
@@ -31,7 +33,12 @@ function BoardSelect() {
           </li>
         ))}
       </ul>
-      <button className="sidebar--board-button">
+      <button
+        className="sidebar--board-button"
+        onClick={() => {
+          setShowModal("addBoard");
+        }}
+      >
         <img src={iconBoardPurple} alt="board" />+ Create New Board
       </button>
     </div>

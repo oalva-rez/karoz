@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-
 const BoardsContext = React.createContext();
 const ActiveBoardContext = React.createContext();
 

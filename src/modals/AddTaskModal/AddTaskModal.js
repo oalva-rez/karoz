@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
@@ -75,15 +74,21 @@ function AddTaskModal(props) {
     if (inputData.title === "") {
       setErrors((err) => ({ ...err, titleValue: true }));
       isValid = false;
+    } else {
+      setErrors((err) => ({ ...err, titleValue: false }));
     }
     if (inputData.description === "") {
       setErrors((err) => ({ ...err, descriptionValue: true }));
       isValid = false;
+    } else {
+      setErrors((err) => ({ ...err, descriptionValue: false }));
     }
 
     if (inputData.status === undefined) {
       setErrors((err) => ({ ...err, statusValue: true }));
       isValid = false;
+    } else {
+      setErrors((err) => ({ ...err, statusValue: false }));
     }
 
     return isValid;
@@ -158,11 +163,9 @@ function AddTaskModal(props) {
       }, 3000);
     }
   }
-  console.log(inputData);
   function addTaskToColumn() {
     const formattedSubtasks = Object.entries(inputData.subtasks)
       .map(([key, value]) => {
-        console.log(key);
         return {
           title: value,
           isCompleted: false,
@@ -171,9 +174,8 @@ function AddTaskModal(props) {
       })
       .filter((subtask) => subtask.title !== "");
 
-    const column = columnObjects.find(
-      (column) => column.title === inputData.status
-    );
+    const column = columnObjects.find((col) => col.title === inputData.status);
+
     const newTask = {
       id: nanoid(),
       title: inputData.title,
