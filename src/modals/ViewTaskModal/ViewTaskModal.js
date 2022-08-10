@@ -121,7 +121,7 @@ export default function ViewTaskModal(props) {
                   checked={subtask.isCompleted ? true : false}
                   onChange={() => updateSubtask(subtask.id)}
                 />
-                <span class="checkmark"></span>
+                <span className="checkmark"></span>
                 {subtask.title}
               </label>
             );

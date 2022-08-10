@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React, { useState, useContext } from "react";
 
 const TasksContext = React.createContext();
@@ -13,7 +14,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 1,
       boardId: 1,
-      id: 1,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -38,7 +39,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 1,
       boardId: 1,
-      id: 2,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -63,7 +64,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 1,
       boardId: 1,
-      id: 3,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -88,7 +89,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 4,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -113,7 +114,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 5,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -138,7 +139,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 6,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -163,7 +164,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 7,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -188,7 +189,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 8,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -213,7 +214,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
-      id: 9,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -238,7 +239,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 10,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -263,7 +264,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 11,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -288,7 +289,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 12,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -313,7 +314,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 13,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -338,7 +339,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 14,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",
@@ -363,7 +364,7 @@ export default function TasksProvider({ children }) {
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
-      id: 15,
+      id: nanoid(),
       subtasks: [
         {
           title: "Build UI for onboarding flow",

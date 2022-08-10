@@ -5,7 +5,6 @@ import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useTasksContext } from "../../context/TasksContext";
 import deleteIcon from "../../assets/icon-cross.svg";
-import deleteIconRed from "../../assets/icon-cross-red.svg";
 import { nanoid } from "nanoid";
 
 function AddTaskModal(props) {
@@ -159,9 +158,11 @@ function AddTaskModal(props) {
       }, 3000);
     }
   }
+  console.log(inputData);
   function addTaskToColumn() {
     const formattedSubtasks = Object.entries(inputData.subtasks)
       .map(([key, value]) => {
+        console.log(key);
         return {
           title: value,
           isCompleted: false,
@@ -181,12 +182,10 @@ function AddTaskModal(props) {
       boardId: activeBoard.id,
       subtasks: formattedSubtasks,
     };
-    console.log(newTask);
     setTasks((prev) => {
       return [...prev, newTask];
     });
   }
-
   return (
     <Modal
       {...props}
