@@ -1,5 +1,6 @@
 import React from "react";
 import iconBoard from "../../assets/icon-board.svg";
+import iconBoardPurple from "../../assets/icon-board-purple.svg";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 
@@ -31,7 +32,7 @@ function BoardSelect() {
         ))}
       </ul>
       <button className="sidebar--board-button">
-        <img src={iconBoard} alt="board" />+ Create New Board
+        <img src={iconBoardPurple} alt="board" />+ Create New Board
       </button>
     </div>
   );

@@ -5,7 +5,7 @@ import "./components/Header/header.css";
 import "./components/Sidebar/sidebar.css";
 import "./components/ActiveBoard/activeBoard.css";
 import "./modals/AddTaskModal/addTaskModal.css";
-import "./modals/DeleteBoardModal/deleteBoardModal.css";
+import "./modals/DeleteModals/deleteModals.css";
 import "./modals/ViewTaskModal/viewTaskModal.css";
 import App from "./App";
 import { AppContextProvider } from "./context/AppContextProvider";

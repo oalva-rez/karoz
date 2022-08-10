@@ -86,7 +86,7 @@ export default function ViewTaskModal(props) {
                 setShowModal("deleteTask");
               }}
             >
-              Delete Board
+              Delete Task
             </li>
           </ul>
         ) : null}

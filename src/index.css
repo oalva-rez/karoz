@@ -120,6 +120,9 @@ button:active {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
   gap: 8px;
 }
+.dropdown-item {
+  font-size: 14px;
+}
 .dropdown-item:nth-child(1) {
   color: var(--medium-gray);
   cursor: pointer;

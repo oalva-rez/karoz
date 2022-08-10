@@ -206,6 +206,7 @@ function AddTaskModal(props) {
             onChange={handleChange}
             value={inputData.title}
             className={errors.titleValue ? "input-err" : ""}
+            autoFocus
           />
           <label htmlFor="description">Description</label>
           <textarea

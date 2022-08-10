@@ -1,26 +1,26 @@
-.delete-board {
+.delete-modal {
   padding: var(--main-margin);
 }
-.delete-board h4 {
+.delete-modal h4 {
   color: var(--red);
   font-size: 19px;
   font-weight: 700;
   margin-bottom: var(--tile-padding);
 }
-.delete-board p {
+.delete-modal p {
   color: var(--medium-gray);
   font-size: 14px;
   font-weight: 500;
   margin-bottom: var(--tile-padding);
 }
 
-.delete-board--buttons {
+.delete-modal--buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
-.delete-board--buttons button {
+.delete-modal--buttons button {
   width: 200px;
   height: 40px;
   border-radius: var(--btn-radius);

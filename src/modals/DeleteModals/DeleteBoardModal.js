@@ -41,13 +41,17 @@ function DeleteBoardModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Body className="delete-board">
+      <Modal.Body className="delete-modal">
         <h4>Delete this board?</h4>
         <p>
-          Are you sure you want to delete the {`'${activeBoard.title}'`} board?
-          This action will remove all columns and tasks and cannot be reversed.
+          Are you sure you want to delete the{" "}
+          <span
+            style={{ fontStyle: "italic", fontWeight: 700 }}
+          >{`'${activeBoard.title}'`}</span>{" "}
+          board? This action will remove all columns and tasks and cannot be
+          reversed.
         </p>
-        <div className="delete-board--buttons">
+        <div className="delete-modal--buttons">
           <button
             className="delete-action-button"
             onClick={() => {
