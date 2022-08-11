@@ -8,22 +8,25 @@ import { useShowModalContext } from "../../context/ShowModalContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useHideSidebarContext } from "../../context/HideSidebarContext";
+import { useThemeContext } from "../../context/ThemeContext";
+import { themeColors } from "../../context/themeColors";
 
 function Header() {
   const [showModal, setShowModal] = useShowModalContext();
   const [columns, setColumns] = useColumnsContext();
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
 
   const [showSettings, setShowSettings] = useState(false);
   return (
     <>
       {!hideSidebar ? (
-        <div className="header--logo">
+        <div className="header--logo" data-theme={darkTheme ? "dark" : "light"}>
           <img src={logoLight} alt="logo" />
           <h1 className="header--company">Karoz</h1>
         </div>
       ) : null}
-      <header className="header">
+      <header className="header" data-theme={darkTheme ? "dark" : "light"}>
         <BoardName />
         <button
           className={

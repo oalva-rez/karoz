@@ -6,8 +6,10 @@ import { useTasksContext } from "../../context/TasksContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useShowModalContext } from "../../context/ShowModalContext";
+import { useThemeContext } from "../../context/ThemeContext";
 
 export default function ViewTaskModal(props) {
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [activeTask, setActiveTask] = useActiveTaskContext();
   const [tasks, setTasks] = useTasksContext();
   const [columns, setColumns] = useColumnsContext();
@@ -66,6 +68,7 @@ export default function ViewTaskModal(props) {
       size="med"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body className="view-task">
         {showSettings ? (
@@ -100,10 +103,10 @@ export default function ViewTaskModal(props) {
           />
         </h4>
         <p className="view-task--desc">{activeTask.desc}</p>
-        <h5 className="view-task--subtask-header">
+        <label className="view-task--subtask-header">
           Subtasks ({getNumberTasksCompleted(activeTask)} of{" "}
           {activeTask.subtasks.length})
-        </h5>
+        </label>
         <div className="view-task--subtasks">
           {activeTask.subtasks.map((subtask, index) => {
             return (
@@ -127,7 +130,7 @@ export default function ViewTaskModal(props) {
             );
           })}
         </div>
-        <h5 className="view-task--status-header">Current Status</h5>
+        <label className="view-task--status-header">Current Status</label>
         <select
           name="status"
           id="status"

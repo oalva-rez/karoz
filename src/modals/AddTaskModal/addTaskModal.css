@@ -4,6 +4,7 @@
   font-size: 24px;
   font-weight: 700;
 }
+
 .input-err {
   border: 1px solid var(--red) !important;
 }
@@ -20,7 +21,7 @@
   margin: 0 0 8px 0;
   padding: 0;
 
-  color: var(--medium-gray);
+  color: var(--label-color);
   font-size: 13px;
   font-weight: 700;
 }
@@ -37,6 +38,11 @@ select {
   padding: 0 var(--placeholder-padding);
   cursor: pointer;
   outline: none;
+  background-color: var(--white);
+  color: white;
+}
+.add-task-form select {
+  color: var(--black);
 }
 .add-task-form textarea {
   padding-top: var(--placeholder-padding);
@@ -86,6 +92,7 @@ select {
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
+  transition: all 0.2s ease-in-out;
 }
 
 .add-subtask-btn {
@@ -94,7 +101,7 @@ select {
 }
 .create-task-btn {
   background-color: var(--main-purple);
-  color: var(--white);
+  color: white;
   margin-bottom: var(--main-margin);
 }
 

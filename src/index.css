@@ -41,6 +41,9 @@ code {
   --white: #fff;
   --red: #ea5555;
   --red-hover: #ff9898;
+  --label-color: var(--medium-gray);
+  --checkbox-color: white;
+  --subtask-hover-color: var(--btn-secondary-hover-color)
 
   --border-light: 1px solid var(--lines-light);
   --border-dark: 1px solid var(--lines-dark);
@@ -54,6 +57,19 @@ code {
   --tile-padding: 20px;
   --header-height: 97px;
   --sidebar-width: 300px;
+}
+[data-theme="dark"] {
+  --light-gray: var(--very-dark-gray);
+  --black: white;
+  --white: var(--dark-gray);
+  --border-light: var(--border-dark);
+  --input-border-color: var(--lines-dark);
+  --white-font: white;
+  --btn-secondary-color: white;
+  --btn-secondary-hover-color: rgb(207, 207, 207);
+  --label-color: white;
+  --checkbox-color: var(--dark-gray);
+  --subtask-hover-color: #625fc74e;
 }
 .wrapper {
   display: grid;
@@ -122,6 +138,9 @@ button:active {
 }
 .dropdown-item {
   font-size: 14px;
+}
+.dropdown-item:hover {
+  background-color: var(--white);
 }
 .dropdown-item:nth-child(1) {
   color: var(--medium-gray);

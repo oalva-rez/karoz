@@ -5,6 +5,8 @@
   grid-area: 2 / 1 / -1 / 1;
   border-right: var(--border-light);
   height: calc(100vh - var(--header-height));
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
 
 /* all boards */
@@ -35,13 +37,14 @@
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.3px;
+  transition: all 0.3s ease-in-out;
 }
 .sidebar--all-boards ul li:hover {
   background-color: var(--light-gray);
   color: var(--main-purple);
 }
 .selected {
-  color: var(--white) !important;
+  color: white !important;
   background-color: var(--main-purple) !important;
 }
 
@@ -76,6 +79,7 @@
   justify-content: center;
   width: 250px;
   height: 45px;
+  transition: all 0.3s ease-in-out;
 }
 .switch {
   position: relative;

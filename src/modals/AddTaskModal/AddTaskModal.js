@@ -3,12 +3,14 @@ import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useThemeContext } from "../../context/ThemeContext";
 import deleteIcon from "../../assets/icon-cross.svg";
 import { nanoid } from "nanoid";
 
 function AddTaskModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [tasks, setTasks] = useTasksContext();
   const [subtaskErr, setSubtaskErr] = useState(false);
   const [errors, setErrors] = useState({
@@ -194,8 +196,9 @@ function AddTaskModal(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
-      <Modal.Body>
+      <Modal.Body className="modal-container">
         <h4 className="modal-title">Add New Task</h4>
 
         <form className="add-task-form">

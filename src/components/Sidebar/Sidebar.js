@@ -3,12 +3,14 @@ import BoardSelect from "./BoardSelect";
 import HideSidebar from "./HideSidebar";
 import Theme from "./Theme";
 import { useHideSidebarContext } from "../../context/HideSidebarContext";
+import { useThemeContext } from "../../context/ThemeContext";
 
 function Sidebar() {
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
 
   return !hideSidebar ? (
-    <aside className="sidebar">
+    <aside className="sidebar" data-theme={darkTheme ? "dark" : "light"}>
       <BoardSelect />
       <div className="sidebar--display-settings">
         <Theme />

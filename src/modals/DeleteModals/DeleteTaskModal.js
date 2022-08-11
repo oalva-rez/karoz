@@ -2,9 +2,12 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useActiveTaskContext } from "../../context/TasksContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useThemeContext } from "../../context/ThemeContext";
+
 function DeleteTaskModal(props) {
   const [activeTask, setActiveTask] = useActiveTaskContext();
   const [tasks, setTasks] = useTasksContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
 
   function deleteTask() {
     setTasks((prev) => prev.filter((task) => task.id !== activeTask.id));
@@ -16,6 +19,7 @@ function DeleteTaskModal(props) {
       size="med"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body className="delete-modal">
         <h4>Delete this task?</h4>

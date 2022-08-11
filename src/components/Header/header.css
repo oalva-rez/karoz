@@ -5,6 +5,9 @@
   border-bottom: var(--border-light);
   padding: 0px 18px 0px var(--main-margin);
   position: relative;
+  transition: "all 1s ease-in-out";
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
 .header--logo img {
   padding: 0;
@@ -15,18 +18,24 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: var(--main-margin);
+  padding-left: var(--main-margin);
   border-right: var(--border-light);
+  background-color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
 .header--company {
   font-weight: 700;
   font-size: 34px;
   margin: 0;
+  color: var(--black);
+  transition: all 0.3s ease-in-out;
 }
 .header--active-board {
   font-weight: 700;
   font-size: 24px;
   flex: 1;
+  color: var(--black);
+  transition: color 0.3s ease-in-out;
 }
 
 .header--main-button {
@@ -47,4 +56,5 @@
   right: 30px;
   bottom: -90%;
   z-index: 999;
+  transition: all 0.3s ease-in-out;
 }

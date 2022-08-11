@@ -3,11 +3,13 @@ import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useThemeContext } from "../../context/ThemeContext";
 
 function DeleteBoardModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [boards, setBoards] = useBoardsContext();
   const [tasks, setTasks] = useTasksContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
 
   // issue with this function is that it is not updating the state of the boards
 
@@ -45,6 +47,7 @@ function DeleteBoardModal(props) {
       size="med"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body className="delete-modal">
         <h4>Delete this board?</h4>

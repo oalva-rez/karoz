@@ -4,6 +4,7 @@ import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useThemeContext } from "../../context/ThemeContext";
 import deleteIcon from "../../assets/icon-cross.svg";
 import { nanoid } from "nanoid";
 
@@ -12,6 +13,7 @@ function EditBoardModal(props) {
   const [tasks, setTasks] = useTasksContext();
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [columnsErr, setColumnsErr] = useState(false);
   const [errors, setErrors] = useState({
     titleValue: false,
@@ -128,6 +130,7 @@ function EditBoardModal(props) {
       size="med"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body>
         <h4 className="modal-title">Edit Board</h4>

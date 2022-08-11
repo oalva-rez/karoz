@@ -1,10 +1,13 @@
 .view-task {
   padding: var(--main-margin);
 }
+.view-task label {
+  color: var(--label-color);
+}
 .view-task--title {
   font-weight: 700;
   font-size: 19px;
-
+  color: var(--black);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +44,7 @@
   cursor: pointer;
 }
 .view-task--subtask-item:hover {
-  background-color: var(--btn-secondary-hover-color);
+  background-color: var(--subtask-hover-color);
 }
 /* checkbox style */
 .view-task--subtask-item input {
@@ -56,11 +59,11 @@
   left: 10px;
   height: 20px;
   width: 20px;
-  background-color: rgb(222, 222, 222);
+  background-color: var(--checkbox-color);
   border-radius: 3px;
 }
 .view-task--subtask-item:hover input ~ .checkmark {
-  background-color: #eee;
+  background-color: var(--checkbox-color);
 }
 .view-task--subtask-item input:checked ~ .checkmark {
   background-color: var(--main-purple);
@@ -111,6 +114,8 @@
 .view-task--status {
   border-radius: 4px;
   border: 1px solid var(--input-border-color);
+  background-color: var(--white);
+  color: var(--black);
   resize: none;
   padding: 0 var(--placeholder-padding);
   cursor: pointer;

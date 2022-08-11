@@ -6,6 +6,7 @@
   overflow: auto;
   max-width: 100%;
   position: relative;
+  transition: background-color 0.3s ease-in-out;
 }
 /* column */
 .column--heading {
@@ -65,7 +66,9 @@
   border-radius: 8px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   min-width: 280px;
+  color: var(--black);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .tasks--item-title {
   font-size: 15px;

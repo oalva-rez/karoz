@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
+import { useThemeContext } from "../../context/ThemeContext";
 import deleteIcon from "../../assets/icon-cross.svg";
 import { nanoid } from "nanoid";
 
@@ -10,6 +11,7 @@ function AddBoardModal(props) {
   const [boards, setBoards] = useBoardsContext();
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [columnsErr, setColumnsErr] = useState(false);
   const [errors, setErrors] = useState({
     titleValue: false,
@@ -166,9 +168,10 @@ function AddBoardModal(props) {
       {...props}
       size="med"
       aria-labelledby="contained-modal-title-vcenter"
+      data-theme={darkTheme ? "dark" : "light"}
       centered
     >
-      <Modal.Body>
+      <Modal.Body className="modal-container">
         <h4 className="modal-title">Add New Board</h4>
 
         <form className="add-board-form">

@@ -5,10 +5,12 @@ import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useActiveTaskContext } from "../../context/TasksContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useTasksContext } from "../../context/TasksContext";
+import { useThemeContext } from "../../context/ThemeContext";
 import deleteIcon from "../../assets/icon-cross.svg";
 import { nanoid } from "nanoid";
 
 function EditTaskModal(props) {
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [columns, setColumns] = useColumnsContext();
   const [tasks, setTasks] = useTasksContext();
@@ -148,6 +150,7 @@ function EditTaskModal(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body>
         <h4 className="modal-title">Edit Task</h4>
