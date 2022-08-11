@@ -80,6 +80,9 @@ code {
   font-family: "PlusJakartaSans", sans-serif;
   font-weight: 500;
 }
+.hide-sidebar {
+  grid-template: var(--header-height) 1fr / 0px 1fr;
+}
 button:focus,
 button:active {
   border: none;

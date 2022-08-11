@@ -57,16 +57,7 @@ export default function App() {
     }
   }, [showModal]);
   return (
-    <div
-      className="wrapper"
-      style={
-        hideSidebar
-          ? {
-              gridTemplate: "97px 1fr / 0px 1fr",
-            }
-          : null
-      }
-    >
+    <div className={hideSidebar ? "wrapper hide-sidebar" : "wrapper"}>
       <Header />
       <Sidebar />
       <ActiveBoard />

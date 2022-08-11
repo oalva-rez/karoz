@@ -20,12 +20,11 @@ function Header() {
   const [showSettings, setShowSettings] = useState(false);
   return (
     <>
-      {!hideSidebar ? (
-        <div className="header--logo" data-theme={darkTheme ? "dark" : "light"}>
-          <img src={darkTheme ? logoDark : logoLight} alt="logo" />
-          <h1 className="header--company">Karoz</h1>
-        </div>
-      ) : null}
+      <div className="header--logo" data-theme={darkTheme ? "dark" : "light"}>
+        <img src={darkTheme ? logoDark : logoLight} alt="logo" />
+        <h1 className="header--company">Karoz</h1>
+      </div>
+
       <header className="header" data-theme={darkTheme ? "dark" : "light"}>
         <BoardName />
         <button

@@ -9,7 +9,7 @@ function Sidebar() {
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
   const [darkTheme, setDarkTheme] = useThemeContext();
 
-  return !hideSidebar ? (
+  return (
     <aside className="sidebar" data-theme={darkTheme ? "dark" : "light"}>
       <BoardSelect />
       <div className="sidebar--display-settings">
@@ -17,7 +17,7 @@ function Sidebar() {
         <HideSidebar />
       </div>
     </aside>
-  ) : null;
+  );
 }
 
 export default Sidebar;

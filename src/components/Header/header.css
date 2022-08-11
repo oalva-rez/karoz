@@ -9,6 +9,7 @@
   background-color: var(--white);
   transition: all 0.3s ease-in-out;
 }
+
 .header--logo img {
   padding: 0;
   margin: 0;
@@ -21,8 +22,8 @@
   padding-left: var(--main-margin);
   border-right: var(--border-light);
   background-color: var(--white);
-  transition: all 0.3s ease-in-out;
 }
+
 .header--company {
   font-weight: 700;
   font-size: 34px;

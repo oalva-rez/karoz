@@ -6,7 +6,6 @@
   border-right: var(--border-light);
   height: calc(100vh - var(--header-height));
   background-color: var(--white);
-  transition: all 0.3s ease-in-out;
 }
 
 /* all boards */
@@ -128,9 +127,6 @@ input:checked + .slider:before {
 }
 
 /* hide sidebar */
-.hide-sidebar {
-  grid-template: 97px 1fr / 0px 1fr;
-}
 .sidebar--hide-sidebar {
   display: flex;
   margin: 10px 20px var(--main-margin) 0px;
