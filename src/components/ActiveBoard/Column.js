@@ -13,15 +13,13 @@ function Column() {
   const columnsForActiveBoard = columns.filter(
     (column) => column.boardId === activeBoard.id
   );
-  function randomColorGenerator() {
-    return Math.floor(Math.random() * 16777215).toString(16);
-  }
+
   return columnsForActiveBoard.map((column) => (
     <div key={column.id} className="column">
       <h3 className="column--heading">
         <div
           className="color-code"
-          style={{ backgroundColor: `#${randomColorGenerator()}` }}
+          style={{ backgroundColor: `${column.color}` }}
         ></div>
         {column.title} (
         {

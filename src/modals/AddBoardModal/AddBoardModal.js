@@ -140,7 +140,9 @@ function AddBoardModal(props) {
       ];
     });
   }
-
+  function randomColorGenerator() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
   function addBoard() {
     const newBoard = {
       id: nanoid(),
@@ -152,6 +154,7 @@ function AddBoardModal(props) {
         id: key,
         title: value,
         boardId: newBoard.id,
+        color: randomColorGenerator(),
       };
     });
     setColumns((prev) => [...prev, ...newColumns]);

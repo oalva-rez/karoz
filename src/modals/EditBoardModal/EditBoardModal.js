@@ -93,6 +93,9 @@ function EditBoardModal(props) {
       };
     });
   }
+  function randomColorGenerator() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
   function updateBoard() {
     const newBoard = {
       id: activeBoard.id,
@@ -101,10 +104,14 @@ function EditBoardModal(props) {
     };
     const newColumns = Object.entries(inputData.columns).map(([key, value]) => {
       const TEMPKEY = key.length > 2 ? key : parseInt(key);
+      const columnColor = columns.find((column) => column.id === TEMPKEY) || {
+        color: randomColorGenerator(),
+      };
       return {
         title: value,
         id: TEMPKEY, //TEMPORARY FIX - DEPLOYMENT SHOULD JUST BE 'key'
         boardId: newBoard.id,
+        color: columnColor.color,
       };
     });
 

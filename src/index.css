@@ -43,7 +43,7 @@ code {
   --red-hover: #ff9898;
   --label-color: var(--medium-gray);
   --checkbox-color: white;
-  --subtask-hover-color: var(--btn-secondary-hover-color)
+  --subtask-hover-color: var(--btn-secondary-hover-color);
 
   --border-light: 1px solid var(--lines-light);
   --border-dark: 1px solid var(--lines-dark);
