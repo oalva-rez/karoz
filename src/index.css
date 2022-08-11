@@ -139,6 +139,7 @@ button:active {
 .dropdown-item {
   font-size: 14px;
 }
+
 .dropdown-item:hover {
   background-color: var(--white);
 }

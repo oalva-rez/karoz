@@ -22,7 +22,7 @@ function Header() {
     <>
       {!hideSidebar ? (
         <div className="header--logo" data-theme={darkTheme ? "dark" : "light"}>
-          <img src={logoLight} alt="logo" />
+          <img src={darkTheme ? logoDark : logoLight} alt="logo" />
           <h1 className="header--company">Karoz</h1>
         </div>
       ) : null}
