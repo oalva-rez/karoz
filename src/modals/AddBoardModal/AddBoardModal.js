@@ -17,10 +17,10 @@ function AddBoardModal(props) {
   // ids for column inputs
   const id1 = nanoid();
   const id2 = nanoid();
-  const id3 = nanoid();
+
   const [inputData, setInputData] = useState({
     title: "",
-    columns: { [id1]: "Todo", [id2]: "In Progress", [id3]: "Done" },
+    columns: { [id1]: "ToDo", [id2]: "In Progress" },
   });
   const [columnInputs, setColumnInputs] = useState([
     <div className="column-input" key={id1}>
@@ -57,24 +57,6 @@ function AddBoardModal(props) {
         className="column-delete"
         onClick={(e) => {
           deleteColumnInput(e, id2);
-        }}
-      />
-    </div>,
-    <div className="column-input" key={id3}>
-      <input
-        type="text"
-        name={id3}
-        placeholder="eg. Done"
-        value={inputData[id3]}
-        onChange={handleChange}
-        id="column"
-      />
-      <img
-        src={deleteIcon}
-        alt="delete"
-        className="column-delete"
-        onClick={(e) => {
-          deleteColumnInput(e, id3);
         }}
       />
     </div>,

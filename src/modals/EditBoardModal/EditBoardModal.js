@@ -106,15 +106,14 @@ function EditBoardModal(props) {
       };
     });
 
-    const columnIds = newColumns.map((column) => column.id);
-
-    setTasks((prev) =>
-      prev.filter((task) => columnIds.includes(task.columnId))
-    );
     setColumns((prev) => [
       ...prev.filter((column) => column.boardId !== activeBoard.id),
       ...newColumns,
     ]);
+    const columnIds = columns.map((column) => column.id);
+    setTasks((prev) =>
+      prev.filter((task) => columnIds.includes(task.columnId))
+    );
     setBoards((prev) => {
       return [newBoard, ...prev.filter((board) => board.id !== activeBoard.id)];
     });

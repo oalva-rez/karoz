@@ -5,6 +5,7 @@
   background-color: var(--light-gray);
   overflow: auto;
   max-width: 100%;
+  position: relative;
 }
 /* column */
 .column--heading {
@@ -17,12 +18,24 @@
   display: flex;
   align-items: center;
 }
+.active-board--empty-msg {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  padding-right: 20px;
+
+  color: var(--medium-gray);
+  font-size: 20px;
+}
 .color-code {
   height: 15px;
   width: 15px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
+}
+.column {
+  min-width: 280px;
 }
 .new-column {
   display: grid;
@@ -35,6 +48,7 @@
   min-width: 280px;
   min-height: 100vh;
   margin-top: 33px;
+  flex: 1;
   cursor: pointer;
 }
 /* tasks */

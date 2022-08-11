@@ -2,10 +2,12 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useBoardsContext } from "../../context/BoardsContext";
+import { useTasksContext } from "../../context/TasksContext";
 
 function DeleteBoardModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [boards, setBoards] = useBoardsContext();
+  const [tasks, setTasks] = useTasksContext();
 
   // issue with this function is that it is not updating the state of the boards
 
@@ -29,11 +31,14 @@ function DeleteBoardModal(props) {
           });
         }
       });
+
+      setTasks((prev) =>
+        prev.filter((task) => task.boardId !== activeBoard.id)
+      );
       setActiveBoard({ id: newBoards[0].id, title: newBoards[0].title });
       return newBoards;
     });
   }
-
   return (
     <Modal
       {...props}
