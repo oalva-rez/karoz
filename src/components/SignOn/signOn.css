@@ -1,0 +1,185 @@
+.sign-on--wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template: 1fr / 0.6fr 1fr;
+  background-color: var(--main-purple-hover);
+  font-family: "PlusJakartaSans";
+}
+
+.sign-on--heading {
+  background-color: var(--main-purple-hover);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--main-margin);
+}
+.sign-on--heading h1 {
+  font-weight: 700;
+  font-size: 47px;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 7px 10px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.sign-on--heading h2 {
+  font-weight: 700;
+  margin: 0;
+  color: black;
+}
+.sign-on--heading p {
+  color: black;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  margin-top: 10px;
+}
+.sign-on--logo {
+  height: 35px;
+  width: 35px;
+  margin-right: 8px;
+}
+
+/* user info */
+.sign-on--user-info {
+  background-color: #fff;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  display: grid;
+  justify-items: center;
+}
+
+.user-wrapper {
+  display: grid;
+  width: 60%;
+  align-content: center;
+  gap: 17px;
+  padding: 50px 0;
+}
+
+.user-wrapper h2 {
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.user-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+}
+.user-buttons button {
+  padding: 8px 13px;
+  background-color: #fff;
+  border-radius: 9px;
+  font-size: 13px;
+  border: 1px solid lightgray;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.user-buttons button img {
+  padding-right: 6px;
+}
+
+.or {
+  text-align: center;
+  color: #919191;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+.user-form label {
+  margin: 0;
+  color: var(--medium-gray);
+  font-weight: 500;
+  font-size: 15px;
+}
+.user-form label:not(:first-child) {
+  margin-top: 17px;
+}
+.user-form input {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  height: 40px;
+  outline: none;
+}
+.user-form input:focus {
+  border: 2px solid var(--main-purple);
+}
+.sign-on-button {
+  height: 40px;
+  background-color: var(--main-purple);
+  color: white;
+  border-radius: var(--btn-radius);
+  border: none;
+  margin-top: 25px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sign-on-button:hover {
+  background-color: var(--main-purple-hover);
+}
+.user-login-account {
+  color: #919191;
+}
+.user-login-account span {
+  color: var(--main-purple);
+  cursor: pointer;
+}
+.user-login-account span:hover {
+  color: var(--main-purple-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 1364px) {
+  .sign-on--wrapper {
+    grid-template: 1fr / 0.8fr 1fr;
+  }
+
+  .user-wrapper {
+    width: 60%;
+  }
+}
+@media (max-width: 999px) {
+  .sign-on--wrapper {
+    grid-template: 1fr / 1fr 1fr;
+  }
+
+  .user-wrapper {
+    width: 80%;
+  }
+}
+@media (max-width: 850px) {
+  .sign-on--wrapper {
+    grid-template: 95vh 1fr / 1fr;
+  }
+  .sign-on--user-info {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+  .user-wrapper {
+    width: 90%;
+    position: relative;
+  }
+  .user-wrapper:before {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    border-color: #919191;
+    content: "";
+    display: inline-block;
+    height: 0.58em;
+    left: 50%;
+    position: absolute;
+    top: 15px;
+    transform: rotate(135deg);
+    vertical-align: top;
+    width: 0.58em;
+  }
+}

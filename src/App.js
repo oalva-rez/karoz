@@ -13,12 +13,14 @@ import showSidebarIcon from "./assets/icon-show-sidebar.svg";
 import { useShowModalContext } from "./context/ShowModalContext";
 import { useHideSidebarContext } from "./context/HideSidebarContext";
 import { useMobileScreenContext } from "./context/MobileScreenContext";
+import UserSignOn from "./components/SignOn/UserSignOn";
 
 export default function App() {
   const [showModal, setShowModal] = useShowModalContext();
-  const [activeModal, setActiveModal] = useState(null);
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
   const [mobileScreen, setMobileScreen] = useMobileScreenContext();
+  const [activeModal, setActiveModal] = useState(null);
+  const [userId, setUserId] = useState(false);
 
   function hideModal() {
     setActiveModal(null);
@@ -70,7 +72,8 @@ export default function App() {
         break;
     }
   }, [showModal]);
-  return (
+
+  return userId ? (
     <div
       className={
         hideSidebar || mobileScreen ? "wrapper hide-sidebar" : "wrapper"
@@ -89,5 +92,7 @@ export default function App() {
       )}
       {activeModal}
     </div>
+  ) : (
+    <UserSignOn />
   );
 }

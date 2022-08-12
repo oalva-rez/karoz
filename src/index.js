@@ -8,6 +8,7 @@ import "./modals/AddTaskModal/addTaskModal.css";
 import "./modals/DeleteModals/deleteModals.css";
 import "./modals/ViewTaskModal/viewTaskModal.css";
 import "./modals/AddBoardModal/addBoardModal.css";
+import "./components/SignOn/signOn.css";
 import App from "./App";
 import { AppContextProvider } from "./context/AppContextProvider";
 
