@@ -33,6 +33,7 @@ export default function App() {
         setMobileScreen(false);
       }
     }
+    handleResize();
     window.addEventListener("resize", handleResize);
   });
 

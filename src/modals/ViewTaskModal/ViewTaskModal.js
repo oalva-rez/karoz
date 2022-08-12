@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import settings from "../../assets/icon-vertical-ellipsis.svg";
+import cross from "../../assets/icon-cross.svg";
 import { useActiveTaskContext } from "../../context/TasksContext";
 import { useTasksContext } from "../../context/TasksContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
@@ -95,12 +96,20 @@ export default function ViewTaskModal(props) {
         ) : null}
         <h4 className="view-task--title">
           {activeTask.title}
-          <img
-            src={settings}
-            alt="settings"
-            className="settings-img"
-            onClick={() => setShowSettings((prev) => !prev)}
-          />
+          <div className="view-task--options">
+            <img
+              src={settings}
+              alt="settings"
+              className="settings-img"
+              onClick={() => setShowSettings((prev) => !prev)}
+            />
+            <img
+              src={cross}
+              alt="exit"
+              className="exit-img"
+              onClick={() => props.onHide()}
+            />
+          </div>
         </h4>
         <p className="view-task--desc">{activeTask.desc}</p>
         <label className="view-task--subtask-header">

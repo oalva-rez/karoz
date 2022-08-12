@@ -199,7 +199,17 @@ function AddTaskModal(props) {
       data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body className="modal-container">
-        <h4 className="modal-title">Add New Task</h4>
+        <div className="task-modal-header">
+          <h4 className="modal-title">Add New Task</h4>
+          <img
+            src={deleteIcon}
+            alt="exit"
+            className="exit-img"
+            onClick={() => {
+              props.onHide();
+            }}
+          />
+        </div>
 
         <form className="add-task-form">
           <label htmlFor="title">Title</label>

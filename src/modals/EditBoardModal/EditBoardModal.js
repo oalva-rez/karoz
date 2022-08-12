@@ -140,7 +140,15 @@ function EditBoardModal(props) {
       data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body>
-        <h4 className="modal-title">Edit Board</h4>
+        <div className="task-modal-header">
+          <h4 className="modal-title">Edit Board</h4>
+          <img
+            src={deleteIcon}
+            alt="exit"
+            className="exit-img"
+            onClick={() => props.onHide()}
+          />
+        </div>
 
         <form className="add-board-form">
           <label htmlFor="title">Title</label>

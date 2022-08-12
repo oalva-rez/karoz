@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useActiveTaskContext } from "../../context/TasksContext";
@@ -153,7 +152,15 @@ function EditTaskModal(props) {
       data-theme={darkTheme ? "dark" : "light"}
     >
       <Modal.Body>
-        <h4 className="modal-title">Edit Task</h4>
+        <div className="task-modal-header">
+          <h4 className="modal-title">Edit Task</h4>
+          <img
+            src={deleteIcon}
+            alt="exit"
+            className="exit-img"
+            onClick={() => props.onHide()}
+          />
+        </div>
 
         <form className="add-task-form">
           <label htmlFor="title">Title</label>

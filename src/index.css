@@ -113,12 +113,25 @@ button:active {
   cursor: pointer;
 }
 
+.task-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--tile-padding) var(--tile-padding) 20px 0;
+}
 /* dropdown settings */
 .settings-img {
   width: max-content;
   height: max-content;
-  padding: 12px 12px;
-
+  padding: 12px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.exit-img {
+  width: max-content;
+  height: max-content;
+  padding: 12px;
+  margin: 0 !important;
   cursor: pointer;
 }
 .dropdown-settings {

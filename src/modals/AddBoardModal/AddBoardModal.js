@@ -175,7 +175,15 @@ function AddBoardModal(props) {
       centered
     >
       <Modal.Body className="modal-container">
-        <h4 className="modal-title">Add New Board</h4>
+        <div className="task-modal-header">
+          <h4 className="modal-title">Add New Board</h4>
+          <img
+            src={deleteIcon}
+            alt="exit"
+            className="exit-img"
+            onClick={() => props.onHide()}
+          />
+        </div>
 
         <form className="add-board-form">
           <label htmlFor="title">Title</label>
