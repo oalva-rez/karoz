@@ -4,18 +4,17 @@ import settings from "../../assets/icon-vertical-ellipsis.svg";
 import logoDark from "../../assets/logo-dark.svg";
 import logoLight from "../../assets/logo-light.svg";
 import logoMobile from "../../assets/logo-mobile.svg";
+import iconPlus from "../../assets/icon-plus.svg";
 import { useShowModalContext } from "../../context/ShowModalContext";
-import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
-import { useHideSidebarContext } from "../../context/HideSidebarContext";
 import { useThemeContext } from "../../context/ThemeContext";
-import { themeColors } from "../../context/themeColors";
+import { useMobileScreenContext } from "../../context/MobileScreenContext";
 
 function Header() {
   const [showModal, setShowModal] = useShowModalContext();
   const [columns, setColumns] = useColumnsContext();
-  const [hideSidebar, setHideSidebar] = useHideSidebarContext();
   const [darkTheme, setDarkTheme] = useThemeContext();
+  const [mobileScreen, setMobileScreen] = useMobileScreenContext();
 
   const [showSettings, setShowSettings] = useState(false);
   return (
@@ -26,17 +25,28 @@ function Header() {
       </div>
 
       <header className="header" data-theme={darkTheme ? "dark" : "light"}>
+        {mobileScreen ? (
+          <div
+            className="header--logo-mobile"
+            data-theme={darkTheme ? "dark" : "light"}
+          >
+            <img src={logoMobile} alt="logo" />
+          </div>
+        ) : null}
         <BoardName />
         <button
           className={
-            columns.length > 0
-              ? "header--main-button"
-              : "header--main-button disabled"
+            mobileScreen
+              ? "header--main-button mobile-btn"
+              : "header--main-button"
           }
           onClick={() => setShowModal("addTask")}
-          disabled={columns.length === 0 ? true : false}
         >
-          + Add New Task
+          {mobileScreen ? (
+            <img src={iconPlus} alt="add" />
+          ) : (
+            <>+ Add New Task</>
+          )}
         </button>
         <img
           src={settings}

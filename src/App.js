@@ -12,16 +12,29 @@ import ViewTaskModal from "./modals/ViewTaskModal/ViewTaskModal";
 import showSidebarIcon from "./assets/icon-show-sidebar.svg";
 import { useShowModalContext } from "./context/ShowModalContext";
 import { useHideSidebarContext } from "./context/HideSidebarContext";
+import { useMobileScreenContext } from "./context/MobileScreenContext";
 
 export default function App() {
   const [showModal, setShowModal] = useShowModalContext();
   const [activeModal, setActiveModal] = useState(null);
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
+  const [mobileScreen, setMobileScreen] = useMobileScreenContext();
 
   function hideModal() {
     setActiveModal(null);
     setShowModal(null);
   }
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 800) {
+        setMobileScreen(true);
+      } else if (window.innerWidth >= 800) {
+        setMobileScreen(false);
+      }
+    }
+    window.addEventListener("resize", handleResize);
+  });
 
   useEffect(() => {
     switch (showModal) {
@@ -57,11 +70,15 @@ export default function App() {
     }
   }, [showModal]);
   return (
-    <div className={hideSidebar ? "wrapper hide-sidebar" : "wrapper"}>
+    <div
+      className={
+        hideSidebar || mobileScreen ? "wrapper hide-sidebar" : "wrapper"
+      }
+    >
       <Header />
       <Sidebar />
       <ActiveBoard />
-      {hideSidebar && (
+      {hideSidebar && !mobileScreen && (
         <div
           className="show-sidebar-icon"
           onClick={() => setHideSidebar((prev) => !prev)}

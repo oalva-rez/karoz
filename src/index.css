@@ -42,7 +42,7 @@ code {
   --red: #ea5555;
   --red-hover: #ff9898;
   --label-color: var(--medium-gray);
-  --checkbox-color: white;
+  --checkbox-color: rgb(225, 225, 225);
   --subtask-hover-color: var(--btn-secondary-hover-color);
 
   --border-light: 1px solid var(--lines-light);
@@ -88,9 +88,7 @@ button:active {
   border: none;
   outline: none;
 }
-.disabled {
-  background-color: #a9a4ff82 !important;
-}
+
 .hide {
   display: none !important;
 }

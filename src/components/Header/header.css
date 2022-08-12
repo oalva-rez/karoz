@@ -22,8 +22,11 @@
   padding-left: var(--main-margin);
   border-right: var(--border-light);
   background-color: var(--white);
+  transition: all 0.3s ease-in-out;
 }
-
+.header--logo-mobile {
+  padding-right: var(--main-margin);
+}
 .header--company {
   font-weight: 700;
   font-size: 34px;
@@ -37,8 +40,12 @@
   flex: 1;
   color: var(--black);
   transition: color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
 }
-
+.chevron {
+  padding-left: 8px;
+}
 .header--main-button {
   border-radius: var(--btn-radius);
   outline: none;
@@ -52,7 +59,12 @@
   margin-right: 18px;
   cursor: pointer;
 }
-
+.header--main-button.mobile-btn {
+  display: grid;
+  place-content: center;
+  width: 62px;
+  height: 43px;
+}
 .header--dropdown-settings {
   right: 30px;
   bottom: -90%;

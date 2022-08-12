@@ -4,11 +4,13 @@ import iconBoardPurple from "../../assets/icon-board-purple.svg";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useShowModalContext } from "../../context/ShowModalContext";
+import { useShowAllBoardsContext } from "../../context/MobileScreenContext";
 
 function BoardSelect() {
   const [boards, setBoards] = useBoardsContext();
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [showModal, setShowModal] = useShowModalContext();
+  const [showAllBoards, setShowAllBoards] = useShowAllBoardsContext();
 
   function selectBoard(title, id) {
     setActiveBoard({ title, id });
@@ -36,6 +38,7 @@ function BoardSelect() {
       <button
         className="sidebar--board-button"
         onClick={() => {
+          setShowAllBoards((prev) => !prev);
           setShowModal("addBoard");
         }}
       >
