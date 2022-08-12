@@ -35,7 +35,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Build UI for search",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 1,
       boardId: 1,
@@ -60,7 +60,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Create template structures",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 1,
       boardId: 1,
@@ -85,7 +85,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "QA and test all major user journeys",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -110,7 +110,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Design settings and search pages",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -135,7 +135,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Add account management endpoints",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -160,7 +160,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Design onboarding flow",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -185,7 +185,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Add search endpoints",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -210,7 +210,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Add authentication endpoints",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 2,
       boardId: 1,
@@ -235,7 +235,8 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title:
+        "Research pricing points of various competitors and trial different business models",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -260,7 +261,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Conduct 5 wireframe tests",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -285,7 +286,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Create wireframe prototype",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -310,7 +311,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Review results of usability tests and iterate",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -335,7 +336,8 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title:
+        "Create paper prototypes and conduct 10 usability tests with potential customers",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -360,7 +362,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Market discovery",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -385,7 +387,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Competitor analysis",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -410,7 +412,7 @@ export default function TasksProvider({ children }) {
       ],
     },
     {
-      title: "Build UI for onboarding flow",
+      title: "Research the market",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
       columnId: 3,
       boardId: 1,
@@ -434,31 +436,7 @@ export default function TasksProvider({ children }) {
         },
       ],
     },
-    {
-      title: "Build UI for onboarding flow",
-      desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
-      columnId: 3,
-      boardId: 1,
-      id: 18,
-      subtasks: [
-        {
-          title: "Build UI for onboarding flow",
-          isCompleted: false,
-          id: 1,
-        },
-        {
-          title: "Finalize pricing model",
-          isCompleted: false,
-          id: 2,
-        },
-        {
-          title:
-            "Talk to potential customers about our proposed solution and ask for fair price expectancy",
-          isCompleted: false,
-          id: 3,
-        },
-      ],
-    },
+
     {
       title: "BOARD 2",
       desc: "We know what were planning to build for version one. Now we need to finalize the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition",
