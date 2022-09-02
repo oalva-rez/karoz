@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding: var(--main-margin);
 }
 .sign-on--heading h1 {
@@ -137,7 +138,11 @@
   color: var(--main-purple-hover);
   text-decoration: underline;
 }
-
+@media (min-width: 1364px) {
+  .sign-on--heading {
+    padding: 90px;
+  }
+}
 @media (max-width: 1364px) {
   .sign-on--wrapper {
     grid-template: 1fr / 0.8fr 1fr;
@@ -181,5 +186,8 @@
     transform: rotate(135deg);
     vertical-align: top;
     width: 0.58em;
+  }
+  .sign-on--heading {
+    padding: 60px;
   }
 }

@@ -20,7 +20,7 @@ export default function App() {
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
   const [mobileScreen, setMobileScreen] = useMobileScreenContext();
   const [activeModal, setActiveModal] = useState(null);
-  const [userId, setUserId] = useState(false);
+  const [userId, setUserId] = useState(true);
 
   function hideModal() {
     setActiveModal(null);
