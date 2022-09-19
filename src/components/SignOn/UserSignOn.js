@@ -1,10 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo-dark.svg";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import { initializeApp } from "firebase/app";
+import { getFirebaseConfig } from "../../firebase-config";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
+import { useUserInfoContext } from "../../context/UserInfoContext";
 
 function UserSignOn() {
+  const [userInfo, setUserInfo] = useUserInfoContext();
+
+  // on click on 'Login' set state to true
   const [signIn, setSignIn] = useState(true);
+
+  async function handleSignIn() {
+    let provider = new GoogleAuthProvider();
+    await signInWithPopup(getAuth(), provider);
+    setUserInfo((prev) => {
+      return {
+        ...prev,
+        uId: getAuth().currentUser.uid,
+        displayName: getAuth().currentUser.displayName,
+        email: getAuth().currentUser.email,
+        photoURL: getAuth().currentUser.photoURL,
+      };
+    });
+    console.log(userInfo);
+  }
+  function authStateObserver(user) {
+    if (user) {
+      setUserInfo((prev) => {
+        return {
+          uId: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+        };
+      });
+    } else {
+      setUserInfo((prev) => {
+        return { ...prev, uId: false };
+      });
+    }
+  }
+
+  function initFirebaseAuth() {
+    onAuthStateChanged(getAuth(), authStateObserver);
+  }
+
+  // init auth observer
+  useEffect(() => {
+    const firebaseAppConfig = getFirebaseConfig();
+    initializeApp(firebaseAppConfig);
+    initFirebaseAuth();
+  }, []);
+
   return (
     <div className="sign-on--wrapper">
       <div className="sign-on--heading">
@@ -23,7 +78,7 @@ function UserSignOn() {
         </p>
       </div>
       <div className="sign-on--user-info">
-        {signIn ? <SignUp /> : <SignIn />}
+        {signIn ? <SignUp handleSignIn={handleSignIn} /> : <SignIn />}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import ColumnsProvider from "./ColumnsContext";
 import ShowModalProvider from "./ShowModalContext";
 import HideSidebarProvider from "./HideSidebarContext";
 import MobileScreenProvider from "./MobileScreenContext";
+import UserInfoProvider from "./UserInfoContext";
 
 import { combineComponents } from "./combineComponents";
 
@@ -16,5 +17,6 @@ const providers = [
   ShowModalProvider,
   HideSidebarProvider,
   MobileScreenProvider,
+  UserInfoProvider,
 ];
 export const AppContextProvider = combineComponents(...providers);

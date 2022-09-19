@@ -1,18 +1,18 @@
 import React from "react";
 import googleIcon from "../../assets/icon-google.png";
 import facebookIcon from "../../assets/icon-facebook.png";
-function SignUp() {
+function SignUp({ handleSignIn }) {
   return (
     <div className="user-wrapper">
       <h2>Create Account</h2>
       <div className="user-buttons">
-        <button>
+        <button onClick={handleSignIn}>
           <img src={googleIcon} alt="google" />
-          Sign up with Google
+          Continue with Google
         </button>
         <button>
           <img src={facebookIcon} alt="facebook" />
-          Sign up with Facebook
+          Continue with Facebook
         </button>
       </div>
       <div className="or">- OR -</div>
