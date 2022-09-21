@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import ActiveBoard from "./components/ActiveBoard/ActiveBoard";
+import UserSignOn from "./components/SignOn/UserSignOn";
 import AddTaskModal from "./modals/AddTaskModal/AddTaskModal";
 import AddBoardModal from "./modals/AddBoardModal/AddBoardModal";
 import DeleteTaskModal from "./modals/DeleteModals/DeleteTaskModal";
@@ -14,7 +15,13 @@ import { useShowModalContext } from "./context/ShowModalContext";
 import { useHideSidebarContext } from "./context/HideSidebarContext";
 import { useMobileScreenContext } from "./context/MobileScreenContext";
 import { useUserInfoContext } from "./context/UserInfoContext";
-import UserSignOn from "./components/SignOn/UserSignOn";
+import {
+  useBoardsContext,
+  useActiveBoardContext,
+} from "./context/BoardsContext";
+import { useColumnsContext } from "./context/ColumnsContext";
+import { useTasksContext } from "./context/TasksContext";
+import { useThemeContext } from "./context/ThemeContext";
 
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "./firebase-config";
@@ -39,6 +46,11 @@ export default function App() {
   const [hideSidebar, setHideSidebar] = useHideSidebarContext();
   const [mobileScreen, setMobileScreen] = useMobileScreenContext();
   const [activeModal, setActiveModal] = useState(null);
+  const [boards, setBoards] = useBoardsContext();
+  const [columns, setColumns] = useColumnsContext();
+  const [tasks, setTasks] = useTasksContext();
+  const [activeBoard, setActiveBoard] = useActiveBoardContext();
+  const [darkTheme, setDarkTheme] = useThemeContext();
   const [userInfo, setUserInfo] = useUserInfoContext();
 
   // firebase

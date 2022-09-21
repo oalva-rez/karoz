@@ -9,14 +9,31 @@ import { useShowModalContext } from "../../context/ShowModalContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useThemeContext } from "../../context/ThemeContext";
 import { useMobileScreenContext } from "../../context/MobileScreenContext";
+import { useBoardsContext } from "../../context/BoardsContext";
+import { useUserInfoContext } from "../../context/UserInfoContext";
+import { getAuth, signOut } from "firebase/auth";
 
 function Header() {
   const [showModal, setShowModal] = useShowModalContext();
   const [columns, setColumns] = useColumnsContext();
+  const [boards, setBoards] = useBoardsContext();
   const [darkTheme, setDarkTheme] = useThemeContext();
   const [mobileScreen, setMobileScreen] = useMobileScreenContext();
+  const [userInfo, setUserInfo] = useUserInfoContext();
 
   const [showSettings, setShowSettings] = useState(false);
+
+  function handleSignOut() {
+    signOut(getAuth());
+    setUserInfo((prev) => {
+      return {
+        ...prev,
+        uId: false,
+      };
+    });
+    // setTasks([]);
+    // setProjects([]);
+  }
   return (
     <>
       <div className="header--logo" data-theme={darkTheme ? "dark" : "light"}>
@@ -41,6 +58,12 @@ function Header() {
               : "header--main-button"
           }
           onClick={() => setShowModal("addTask")}
+          style={
+            boards.length === 0
+              ? { backgroundColor: "#a8a4ff", cursor: "not-allowed" }
+              : null
+          }
+          disabled={boards.length === 0 ? true : false}
         >
           {mobileScreen ? (
             <img src={iconPlus} alt="add" />
@@ -55,24 +78,51 @@ function Header() {
           onClick={() => setShowSettings((prev) => !prev)}
         />
         {showSettings ? (
-          <ul className="dropdown-settings header--dropdown-settings">
+          <ul
+            className="dropdown-settings header--dropdown-settings"
+            data-theme={darkTheme ? "dark" : "light"}
+          >
             <li
               className="dropdown-item"
               onClick={() => {
-                setShowSettings((prev) => !prev);
-                setShowModal("editBoard");
+                if (boards.length !== 0) {
+                  setShowSettings((prev) => !prev);
+                  setShowModal("editBoard");
+                }
               }}
+              style={
+                boards.length === 0
+                  ? {
+                      color: "rgb(202, 202, 202)",
+                      cursor: "not-allowed",
+                    }
+                  : null
+              }
             >
               Edit Board
             </li>
             <li
               className="dropdown-item"
               onClick={() => {
-                setShowSettings((prev) => !prev);
-                setShowModal("deleteBoard");
+                if (boards.length !== 0) {
+                  setShowSettings((prev) => !prev);
+                  setShowModal("deleteBoard");
+                }
               }}
+              disabled={boards.length === 0 ? true : false}
+              style={
+                boards.length === 0
+                  ? {
+                      color: "rgb(202, 202, 202)",
+                      cursor: "not-allowed",
+                    }
+                  : null
+              }
             >
               Delete Board
+            </li>
+            <li className="dropdown-item sign-out" onClick={handleSignOut}>
+              Sign Out <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </li>
           </ul>
         ) : null}

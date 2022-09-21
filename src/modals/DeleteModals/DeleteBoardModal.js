@@ -37,7 +37,11 @@ function DeleteBoardModal(props) {
       setTasks((prev) =>
         prev.filter((task) => task.boardId !== activeBoard.id)
       );
-      setActiveBoard({ id: newBoards[0].id, title: newBoards[0].title });
+      setActiveBoard(
+        newBoards.length === 0
+          ? { id: "", title: "Create Board" }
+          : { id: newBoards[0].id, title: newBoards[0].title }
+      );
       return newBoards;
     });
   }
