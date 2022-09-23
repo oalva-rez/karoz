@@ -54,57 +54,53 @@ export default function App() {
   const [userInfo, setUserInfo] = useUserInfoContext();
 
   // firebase
+  // load user data
+  useEffect(() => {
+    async function loadUserData() {
+      const colRef = collection(getFirestore(), "users");
+      await getDocs(colRef).then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          if (doc.id === userInfo.uId) {
+            console.log(
+              `user ${userInfo.displayName} matched / loading user data`
+            );
+            setBoards(doc.data().boards);
+            setTasks(doc.data().tasks);
+            setColumns(doc.data().columns);
+            setActiveBoard(doc.data().activeBoard);
+            setDarkTheme(doc.data().darkTheme);
+          }
+        });
+      });
+    }
+    // THE PROBLEM IS AT USER SIGN OUT, THE USER DATA IS LOADED BACK INTO STATE.
+    // SO WHEN THE USER SIGNS INTO NEW ACCOUNT THE CURRENT STATE IS THE DATA FROM THE PREVIOUS ACCOUNT.
+    loadUserData();
+  }, [userInfo.uId]);
 
-  // load user tasks and projects **********
-  //  useEffect(() => {
-  //   const colRef = collection(getFirestore(), "users");
-  //   getDocs(colRef).then((snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       if (doc.id === userInfo.uId) {
-  //         setTasks(doc.data().tasks);
-  //         setProjects(doc.data().projects);
-  //       }
-  //     });
-  //   });
-  // }, [userInfo.uId]);
+  // save user data to db
+  useEffect(() => {
+    async function saveData() {
+      if (userInfo.uId) {
+        try {
+          console.log(`saving data to ${userInfo.displayName}`);
 
-  // save user todo and projects to db ************
-  //  useEffect(() => {
-  //   async function saveTodo() {
-  //     try {
-  //       if (tasks.length > 0) {
-  //         await setDoc(doc(getFirestore(), "users", userInfo.uId), {
-  //           tasks,
-  //           projects,
-  //           name: userInfo.name,
-  //           uId: userInfo.uId,
-  //           createdAt: serverTimestamp(),
-  //         });
-  //       }
-  //     } catch (error) {
-  //       console.log("Error writing new todo to Firebase Database", error);
-  //     }
-  //   }
+          await setDoc(doc(getFirestore(), "users", userInfo.uId), {
+            boards,
+            columns,
+            tasks,
+            activeBoard,
+            darkTheme,
+            createdAt: serverTimestamp(),
+          });
+        } catch (error) {
+          console.log("Error writing new entry to Firebase Database", error);
+        }
+      }
+    }
 
-  //   saveTodo();
-  //   setInputData({
-  //     task: "",
-  //     date: "",
-  //     project: "",
-  //   });
-  // }, [tasks, projects]);
-
-  function handleSignOut() {
-    signOut(getAuth());
-    setUserInfo((prev) => {
-      return {
-        ...prev,
-        uId: false,
-      };
-    });
-    // setTasks([]);
-    // setProjects([]);
-  }
+    saveData();
+  }, [boards, columns, tasks, darkTheme, activeBoard]);
 
   // firebase
 

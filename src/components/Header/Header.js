@@ -9,30 +9,40 @@ import { useShowModalContext } from "../../context/ShowModalContext";
 import { useColumnsContext } from "../../context/ColumnsContext";
 import { useThemeContext } from "../../context/ThemeContext";
 import { useMobileScreenContext } from "../../context/MobileScreenContext";
-import { useBoardsContext } from "../../context/BoardsContext";
+import {
+  useBoardsContext,
+  useActiveBoardContext,
+} from "../../context/BoardsContext";
 import { useUserInfoContext } from "../../context/UserInfoContext";
+import { useTasksContext } from "../../context/TasksContext";
+
 import { getAuth, signOut } from "firebase/auth";
 
 function Header() {
   const [showModal, setShowModal] = useShowModalContext();
   const [columns, setColumns] = useColumnsContext();
   const [boards, setBoards] = useBoardsContext();
+  const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [darkTheme, setDarkTheme] = useThemeContext();
   const [mobileScreen, setMobileScreen] = useMobileScreenContext();
   const [userInfo, setUserInfo] = useUserInfoContext();
+  const [tasks, setTasks] = useTasksContext();
 
   const [showSettings, setShowSettings] = useState(false);
 
   function handleSignOut() {
     signOut(getAuth());
-    setUserInfo((prev) => {
-      return {
-        ...prev,
-        uId: false,
-      };
+    // clear data
+    setBoards([]);
+    setColumns([]);
+    setTasks([]);
+    setActiveBoard({ title: "", id: "" });
+    setUserInfo({
+      uId: null,
+      email: "",
+      displayName: "",
+      photoURL: "",
     });
-    // setTasks([]);
-    // setProjects([]);
   }
   return (
     <>
@@ -122,7 +132,7 @@ function Header() {
               Delete Board
             </li>
             <li className="dropdown-item sign-out" onClick={handleSignOut}>
-              Sign Out <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Sign Out <i className="fa-solid fa-arrow-right-from-bracket"></i>
             </li>
           </ul>
         ) : null}

@@ -44,6 +44,7 @@ code {
   --label-color: var(--medium-gray);
   --checkbox-color: rgb(225, 225, 225);
   --subtask-hover-color: var(--btn-secondary-hover-color);
+  --tile-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   --border-light: 1px solid var(--lines-light);
   --border-dark: 1px solid var(--lines-dark);
@@ -70,6 +71,7 @@ code {
   --label-color: white;
   --checkbox-color: var(--dark-gray);
   --subtask-hover-color: #625fc74e;
+  --tile-box-shadow: rgba(50, 50, 50, 0.2) 0px 2px 8px 0px;
 }
 .wrapper {
   display: grid;

@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
   signInWithPopup,
 } from "firebase/auth";
+import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { useUserInfoContext } from "../../context/UserInfoContext";
 
 function UserSignOn() {
@@ -30,7 +31,6 @@ function UserSignOn() {
         photoURL: getAuth().currentUser.photoURL,
       };
     });
-    console.log(userInfo);
   }
   function authStateObserver(user) {
     if (user) {
@@ -43,8 +43,8 @@ function UserSignOn() {
         };
       });
     } else {
-      setUserInfo((prev) => {
-        return { ...prev, uId: false };
+      setUserInfo(() => {
+        return { displayName: null, email: null, photoURL: null, uId: null };
       });
     }
   }

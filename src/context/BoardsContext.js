@@ -8,7 +8,7 @@ export const useActiveBoardContext = () => useContext(ActiveBoardContext);
 export default function BoardsProvider({ children }) {
   const [boards, setBoards] = useState([]);
   const [activeBoard, setActiveBoard] = useState({
-    title: "Create Board",
+    title: "",
     id: "",
   });
   return (

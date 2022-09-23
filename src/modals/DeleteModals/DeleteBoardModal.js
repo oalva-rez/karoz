@@ -4,10 +4,12 @@ import { useActiveBoardContext } from "../../context/BoardsContext";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useTasksContext } from "../../context/TasksContext";
 import { useThemeContext } from "../../context/ThemeContext";
+import { useColumnsContext } from "../../context/ColumnsContext";
 
 function DeleteBoardModal(props) {
   const [activeBoard, setActiveBoard] = useActiveBoardContext();
   const [boards, setBoards] = useBoardsContext();
+  const [columns, setColumns] = useColumnsContext();
   const [tasks, setTasks] = useTasksContext();
   const [darkTheme, setDarkTheme] = useThemeContext();
 
@@ -33,13 +35,15 @@ function DeleteBoardModal(props) {
           });
         }
       });
-
+      setColumns((prev) =>
+        columns.filter((column) => column.boardId !== activeBoard.id)
+      );
       setTasks((prev) =>
         prev.filter((task) => task.boardId !== activeBoard.id)
       );
       setActiveBoard(
         newBoards.length === 0
-          ? { id: "", title: "Create Board" }
+          ? { id: "", title: "" }
           : { id: newBoards[0].id, title: newBoards[0].title }
       );
       return newBoards;
