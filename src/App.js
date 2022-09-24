@@ -56,9 +56,9 @@ export default function App() {
   // firebase
   // load user data
   useEffect(() => {
-    async function loadUserData() {
+    function loadUserData() {
       const colRef = collection(getFirestore(), "users");
-      await getDocs(colRef).then((snapshot) => {
+      getDocs(colRef).then((snapshot) => {
         snapshot.docs.forEach((doc) => {
           if (doc.id === userInfo.uId) {
             console.log(
@@ -73,13 +73,13 @@ export default function App() {
         });
       });
     }
-    // THE PROBLEM IS AT USER SIGN OUT, THE USER DATA IS LOADED BACK INTO STATE.
-    // SO WHEN THE USER SIGNS INTO NEW ACCOUNT THE CURRENT STATE IS THE DATA FROM THE PREVIOUS ACCOUNT.
+
     loadUserData();
   }, [userInfo.uId]);
 
   // save user data to db
   useEffect(() => {
+    console.log(userInfo.uId);
     async function saveData() {
       if (userInfo.uId) {
         try {
@@ -101,6 +101,9 @@ export default function App() {
 
     saveData();
   }, [boards, columns, tasks, darkTheme, activeBoard]);
+  useEffect(() => {
+    console.log("running");
+  }, []);
 
   // firebase
 

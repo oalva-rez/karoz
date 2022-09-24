@@ -31,18 +31,21 @@ function Header() {
   const [showSettings, setShowSettings] = useState(false);
 
   function handleSignOut() {
-    signOut(getAuth());
+    setUserInfo({
+      uId: null,
+      email: null,
+      displayName: null,
+      photoURL: null,
+    });
+
     // clear data
     setBoards([]);
     setColumns([]);
     setTasks([]);
     setActiveBoard({ title: "", id: "" });
-    setUserInfo({
-      uId: null,
-      email: "",
-      displayName: "",
-      photoURL: "",
-    });
+    setDarkTheme(false);
+
+    signOut(getAuth());
   }
   return (
     <>

@@ -32,32 +32,11 @@ function UserSignOn() {
       };
     });
   }
-  function authStateObserver(user) {
-    if (user) {
-      setUserInfo((prev) => {
-        return {
-          uId: user.uid,
-          displayName: user.displayName,
-          email: user.email,
-          photoURL: user.photoURL,
-        };
-      });
-    } else {
-      setUserInfo(() => {
-        return { displayName: null, email: null, photoURL: null, uId: null };
-      });
-    }
-  }
-
-  function initFirebaseAuth() {
-    onAuthStateChanged(getAuth(), authStateObserver);
-  }
 
   // init auth observer
   useEffect(() => {
     const firebaseAppConfig = getFirebaseConfig();
     initializeApp(firebaseAppConfig);
-    initFirebaseAuth();
   }, []);
 
   return (
