@@ -11,6 +11,8 @@ import EditBoardModal from "./modals/EditBoardModal/EditBoardModal";
 import EditTaskModal from "./modals/EditTaskModal/EditTaskModal";
 import ViewTaskModal from "./modals/ViewTaskModal/ViewTaskModal";
 import showSidebarIcon from "./assets/icon-show-sidebar.svg";
+import { ThreeDots } from "react-loader-spinner";
+
 import { useShowModalContext } from "./context/ShowModalContext";
 import { useHideSidebarContext } from "./context/HideSidebarContext";
 import { useMobileScreenContext } from "./context/MobileScreenContext";
@@ -53,9 +55,16 @@ export default function App() {
   const [darkTheme, setDarkTheme] = useThemeContext();
   const [userInfo, setUserInfo] = useUserInfoContext();
 
+  const [isLoading, setIsLoading] = useState(true);
+
   // firebase
+
+  // LOADING ICON STAYS SHOWING ON NEW USER CREATION BECAUSE loadUserData()
+  // DOESNT GET CALLED ON USER CREATION
+
   // load user data
   useEffect(() => {
+    console.log("runs useeffect");
     function loadUserData() {
       const colRef = collection(getFirestore(), "users");
       getDocs(colRef).then((snapshot) => {
@@ -69,6 +78,7 @@ export default function App() {
             setColumns(doc.data().columns);
             setActiveBoard(doc.data().activeBoard);
             setDarkTheme(doc.data().darkTheme);
+            setIsLoading(false);
           }
         });
       });
@@ -101,9 +111,6 @@ export default function App() {
 
     saveData();
   }, [boards, columns, tasks, darkTheme, activeBoard]);
-  useEffect(() => {
-    console.log("running");
-  }, []);
 
   // firebase
 
@@ -158,26 +165,49 @@ export default function App() {
     }
   }, [showModal]);
 
-  return userInfo.uId ? (
-    <div
-      className={
-        hideSidebar || mobileScreen ? "wrapper hide-sidebar" : "wrapper"
-      }
-    >
-      <Header />
-      <Sidebar />
-      <ActiveBoard />
-      {hideSidebar && !mobileScreen && (
-        <div
-          className="show-sidebar-icon"
-          onClick={() => setHideSidebar((prev) => !prev)}
-        >
-          <img src={showSidebarIcon} alt="show sidebar" />
+  if (userInfo.uId) {
+    if (isLoading) {
+      return (
+        <div className="loading-page">
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#635fc7"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{
+              display: "grid",
+              placeContent: "center",
+              height: "100vh",
+            }}
+            wrapperClassName=""
+            visible={true}
+          />
         </div>
-      )}
-      {activeModal}
-    </div>
-  ) : (
-    <UserSignOn />
-  );
+      );
+    } else {
+      return (
+        <div
+          className={
+            hideSidebar || mobileScreen ? "wrapper hide-sidebar" : "wrapper"
+          }
+        >
+          <Header />
+          <Sidebar />
+          <ActiveBoard />
+          {hideSidebar && !mobileScreen && (
+            <div
+              className="show-sidebar-icon"
+              onClick={() => setHideSidebar((prev) => !prev)}
+            >
+              <img src={showSidebarIcon} alt="show sidebar" />
+            </div>
+          )}
+          {activeModal}
+        </div>
+      );
+    }
+  } else {
+    return <UserSignOn />;
+  }
 }
