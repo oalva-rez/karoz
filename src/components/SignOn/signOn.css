@@ -132,14 +132,18 @@
 .user-login-account {
   color: #919191;
 }
-.user-login-account span {
+.user-login-account span a {
   color: var(--main-purple);
   cursor: pointer;
+}
+.user-wrapper > *:last-child {
+  margin-top: -25px;
 }
 .user-login-account span:hover {
   color: var(--main-purple-hover);
   text-decoration: underline;
 }
+
 @media (min-width: 1364px) {
   .sign-on--heading {
     padding: 90px;

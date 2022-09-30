@@ -55,6 +55,7 @@ export default function App() {
     const firebaseAppConfig = getFirebaseConfig();
     initializeApp(firebaseAppConfig);
   }, []);
+
   // load user data
   useEffect(() => {
     function loadUserData() {
@@ -95,7 +96,7 @@ export default function App() {
   useEffect(() => {
     async function saveData() {
       // isMounted prevents the useEffect from running on initial render to allow the data to load from db
-      if (userInfo.uId && isMounted.current) {
+      if (userInfo.uId !== "demo" && userInfo.uId && isMounted.current) {
         try {
           // save user data to db on second render if data is updated
           await setDoc(doc(getFirestore(), "users", userInfo.uId), {
@@ -118,6 +119,7 @@ export default function App() {
   }, [boards, columns, tasks, darkTheme, activeBoard]);
 
   // firebase
+
   function hideModal() {
     setActiveModal(null);
     setShowModal(null);

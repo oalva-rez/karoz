@@ -1,7 +1,10 @@
 import React from "react";
 import googleIcon from "../../assets/icon-google.png";
 import facebookIcon from "../../assets/icon-facebook.png";
+import { useUserInfoContext } from "../../context/UserInfoContext";
+
 function SignUp({ handleSignIn }) {
+  const [userInfo, setUserInfo] = useUserInfoContext();
   return (
     <div className="user-wrapper">
       <h2>Create Account</h2>
@@ -33,7 +36,25 @@ function SignUp({ handleSignIn }) {
         </button>
       </form>
       <p className="user-login-account">
-        Already have an account?<span> Log in</span>
+        Already have an account?
+        <span>
+          <a href="#"> Log in</a>
+        </span>
+      </p>
+      <p className="user-login-account">
+        Want to try it out first? Check out the{" "}
+        <span
+          onClick={() => {
+            setUserInfo((prev) => {
+              return {
+                ...prev,
+                uId: "demo",
+              };
+            });
+          }}
+        >
+          <a href="#">Demo Version.</a>
+        </span>
       </p>
     </div>
   );
