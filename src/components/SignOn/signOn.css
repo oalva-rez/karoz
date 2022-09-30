@@ -86,7 +86,9 @@
 .user-buttons button img {
   padding-right: 6px;
 }
-
+.user-buttons a {
+  color: black;
+}
 .or {
   text-align: center;
   color: #919191;

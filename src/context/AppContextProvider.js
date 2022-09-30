@@ -12,11 +12,11 @@ import { combineComponents } from "./combineComponents";
 const providers = [
   ThemeProvider,
   TasksProvider,
+  MobileScreenProvider,
   BoardsProvider,
   ColumnsProvider,
   ShowModalProvider,
   HideSidebarProvider,
-  MobileScreenProvider,
   UserInfoProvider,
 ];
 export const AppContextProvider = combineComponents(...providers);
