@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import BoardName from "./BoardName";
 import settings from "../../assets/icon-vertical-ellipsis.svg";
 import logoDark from "../../assets/logo-dark.svg";

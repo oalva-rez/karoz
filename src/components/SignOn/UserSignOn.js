@@ -4,20 +4,23 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { initializeApp } from "firebase/app";
 import { getFirebaseConfig } from "../../firebase-config";
-import {
-  GoogleAuthProvider,
-  getAuth,
-  onAuthStateChanged,
-  signInWithPopup,
-} from "firebase/auth";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { useUserInfoContext } from "../../context/UserInfoContext";
+import { useNavigate } from "react-router-dom";
 
 function UserSignOn() {
   const [userInfo, setUserInfo] = useUserInfoContext();
+  const navigate = useNavigate();
 
   // on click on 'Login' set state to true
   const [signIn, setSignIn] = useState(true);
+
+  // if user is logged in, redirect to home page
+  useEffect(() => {
+    if (userInfo.uId) {
+      navigate("/");
+    }
+  }, [userInfo.uId]);
 
   async function handleSignIn() {
     let provider = new GoogleAuthProvider();
@@ -33,7 +36,7 @@ function UserSignOn() {
     });
   }
 
-  // init auth observer
+  // initialize firebase
   useEffect(() => {
     const firebaseAppConfig = getFirebaseConfig();
     initializeApp(firebaseAppConfig);
