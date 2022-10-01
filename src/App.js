@@ -34,6 +34,7 @@ import {
   serverTimestamp,
   getDocs,
 } from "firebase/firestore";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default function App() {
   const [showModal, setShowModal] = useShowModalContext();
@@ -51,9 +52,36 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   // firebase
+
+  // auth state observer for login persistance
+  function authStateObserver(user) {
+    if (user || userInfo.uId === "demo") {
+      setUserInfo((prev) => {
+        return {
+          ...prev,
+          uId: userInfo.uId === "demo" ? "demo" : user.uid,
+        };
+      });
+    } else {
+      setUserInfo((prev) => {
+        return {
+          uId: null,
+          displayName: null,
+          email: null,
+          photoURL: null,
+        };
+      });
+    }
+  }
+  function initFirebaseAuth() {
+    onAuthStateChanged(getAuth(), authStateObserver);
+  }
+
+  // init auth observer
   useEffect(() => {
     const firebaseAppConfig = getFirebaseConfig();
     initializeApp(firebaseAppConfig);
+    initFirebaseAuth();
   }, []);
 
   // load user data
