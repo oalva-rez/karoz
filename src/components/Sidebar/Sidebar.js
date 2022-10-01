@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import BoardSelect from "./BoardSelect";
 import HideSidebar from "./HideSidebar";
 import Theme from "./Theme";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useBoardsContext } from "../../context/BoardsContext";
 import { useActiveBoardContext } from "../../context/BoardsContext";

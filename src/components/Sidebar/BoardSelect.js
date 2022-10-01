@@ -30,7 +30,10 @@ function BoardSelect() {
                     : "sidebar--board"
                 }
                 key={board.id}
-                onClick={(title, id) => selectBoard(board.title, board.id)}
+                onClick={(title, id) => {
+                  selectBoard(board.title, board.id);
+                  setShowAllBoards(false);
+                }}
               >
                 <img src={iconBoard} alt="board" />
                 {board.title}
