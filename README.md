@@ -10,37 +10,38 @@ Karoz is a Kanban project management application designed to streamline project 
 * **Mobile Responsive:** Karoz is fully responsive, providing an optimal experience on both desktop and mobile devices.
 * **Dark Mode:** A user-friendly dark mode for comfortable viewing in different lighting conditions.
 
+## Dashboard
+This snapshot illustrates the user-friendly interface, highlighting the easily navigable board layout. Customize your workflow with tasks and columns, effortlessly adapting to the unique demands of your project.
 <p align="center">
-  <img src="./img/karoz-1.webp" alt="karoz dashboard" width="938">
+  <img src="./img/karoz-1.png" alt="karoz dashboard" width="938">
 </p>
 
-This snapshot illustrates the user-friendly interface, highlighting the easily navigable board layout. Customize your workflow with tasks and columns, effortlessly adapting to the unique demands of your project.
+## Task Creation
+This streamlined interface allows for the quick creation and editing of tasks, complete with detailed descriptions and sub-tasks. Tailor each task to your project's needs with ease, ensuring a comprehensive and organized approach to your workflow.
 
 <p align="center">
-<img src="./img/karoz-2.webp"
+<img src="./img/karoz-2.png"
   alt="Task creation"
   width="938">
 </p>
 
-This streamlined interface allows for the quick creation and editing of tasks, complete with detailed descriptions and sub-tasks. Tailor each task to your project's needs with ease, ensuring a comprehensive and organized approach to your workflow.
-
+## User Auth
+Navigate through Karoz's robust authentication process on the login/signup page, designed with security and technical efficiency in mind. This interface integrates Firebase's advanced authentication mechanisms, offering a secure entry point to a personalized project management experience. 
 <p align="center">
-  <img src="./img/karoz-7.webp" alt="auth login" width="938">
+  <img src="./img/karoz-7.png" alt="auth login" width="938">
 </p>
 
-Navigate through Karoz's robust authentication process on the login/signup page, designed with security and technical efficiency in mind. This interface integrates Firebase's advanced authentication mechanisms, offering a secure entry point to a personalized project management experience. 
-
+## Karoz Mobile
+Karoz's mobile version exemplifies responsive design, adapting seamlessly to smaller screens without sacrificing functionality. This view showcases an optimized interface for on-the-go task management, maintaining full feature accessibility and user experience from the desktop version.
 <p align="center">
   <img src="./img/karoz-5.webp" alt="mobile version" width="938">
 </p>
 
-Karoz's mobile version exemplifies responsive design, adapting seamlessly to smaller screens without sacrificing functionality. This view showcases an optimized interface for on-the-go task management, maintaining full feature accessibility and user experience from the desktop version.
-
-<p align="center">
-  <img src="./img/karoz-4.webp" alt="mobile version" width="938">
-</p>
-
+## Dark Mode
 For a less straining and more visually appealing UI during extended usage, dark mode not only adds an aesthetic touch but also enhances usability in low-light environments.
+<p align="center">
+  <img src="./img/karoz-4.png" alt="mobile version" width="938">
+</p>
 
 
 [GitHub action]: https://github.com/andresz1/size-limit-action
