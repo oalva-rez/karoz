@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Karoz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./img/logo.png" align="right"
+     alt="karoz logo" width="320">
 
-## Available Scripts
+Karoz is a Kanban project management application designed to streamline project flow management. It enables users to effortlessly create boards and organize tasks into customizable columns, enhancing workflow efficiency. The app is user-friendly, offering features like user authentication, board customization, and a responsive design suitable for both desktop and mobile use.
 
-In the project directory, you can run:
+* **User Authentication:** Secure login using Firebase, ensuring data safety and user privacy.
+* **Board Creation:** Easily create boards with customizable columns, tasks, and subtasks to fit your project needs.
+* **Mobile Responsive:** Karoz is fully responsive, providing an optimal experience on both desktop and mobile devices.
+* **Dark Mode:** A user-friendly dark mode for comfortable viewing in different lighting conditions.
 
-### `npm start`
+## Dashboard
+This snapshot illustrates the user-friendly interface, highlighting the easily navigable board layout. Customize your workflow with tasks and columns, effortlessly adapting to the unique demands of your project.
+<p align="center">
+  <img src="./img/karoz-1.png" alt="karoz dashboard" width="938">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Task Creation
+This streamlined interface allows for the quick creation and editing of tasks, complete with detailed descriptions and sub-tasks. Tailor each task to your project's needs with ease, ensuring a comprehensive and organized approach to your workflow.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+<img src="./img/karoz-2.png"
+  alt="Task creation"
+  width="938">
+</p>
 
-### `npm test`
+## User Auth
+Navigate through Karoz's robust authentication process on the login/signup page, designed with security and technical efficiency in mind. This interface integrates Firebase's advanced authentication mechanisms, offering a secure entry point to a personalized project management experience. 
+<p align="center">
+  <img src="./img/karoz-7.png" alt="auth login" width="938">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Karoz Mobile
+Karoz's mobile version exemplifies responsive design, adapting seamlessly to smaller screens without sacrificing functionality. This view showcases an optimized interface for on-the-go task management, maintaining full feature accessibility and user experience from the desktop version.
+<p align="center">
+  <img src="./img/karoz-5.webp" alt="mobile version" width="938">
+</p>
 
-### `npm run build`
+## Dark Mode
+For a less straining and more visually appealing UI during extended usage, dark mode not only adds an aesthetic touch but also enhances usability in low-light environments.
+<p align="center">
+  <img src="./img/karoz-4.png" alt="mobile version" width="938">
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[GitHub action]: https://github.com/andresz1/size-limit-action
+[Statoscope]:    https://github.com/statoscope/statoscope
+[cult-img]:      http://cultofmartians.com/assets/badges/badge.svg
+[cult]:          http://cultofmartians.com/tasks/size-limit-config.html
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How It Works
 
-### `npm run eject`
+* **React.js Frontend:** Delivers a dynamic user interface with efficient rendering, ensuring a smooth and responsive experience.
+* **Context API for State Management:** Simplifies state management across the application, allowing for efficient data flow without complex prop-drilling.
+* **Firebase Integration:** Provides robust backend services, including secure user authentication and real-time database interactions for seamless data syncing and storage.
+* **Responsive Design:** Fully adaptable to various devices and screen sizes, ensuring a consistent and accessible experience across desktop and mobile platforms.
+* **Dark Mode Implementation:** Offers an eye-friendly alternative UI, catering to user preferences and different lighting conditions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Karoz is designed to be intuitive and user-friendly. Here's a guide to help you get started and make the most out of the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Installation:
 
-## Learn More
+    ```sh
+    git clone git@github.com:oalva-rez/karoz.git
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Navigate to the project directory and install dependencies.:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+     ```sh
+    npm install
+    ```
 
-### Code Splitting
+3. Setting Up Firebase Authentication:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    * Ensure you have your Firebase authentication tokens.
+    * Configure the Firebase settings in the application as per the documentation.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Using Karoz
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Logging In/Signing Up:
 
-### Advanced Configuration
+    * Open Karoz and navigate to the login/signup page.
+    * Use your credentials to log in, or sign up if you're a new user.
+    * **NOTE:** Email and password not yet impleneted, only Google Auth works.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. Creating a Board:
 
-### Deployment
+    * Once logged in, click on ‘Create Board’ to start a new project.
+    * Name your board and customize its columns (e.g., To Do, In Progress, Done).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. Adding Tasks:
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    * Within a board, click on ‘Add Task’ to create a new task.
+    * Provide details for the task, including description and subtasks.
