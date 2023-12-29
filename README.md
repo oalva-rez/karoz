@@ -44,11 +44,6 @@ For a less straining and more visually appealing UI during extended usage, dark 
 </p>
 
 
-[GitHub action]: https://github.com/andresz1/size-limit-action
-[Statoscope]:    https://github.com/statoscope/statoscope
-[cult-img]:      http://cultofmartians.com/assets/badges/badge.svg
-[cult]:          http://cultofmartians.com/tasks/size-limit-config.html
-
 ## How It Works
 
 * **React.js Frontend:** Delivers a dynamic user interface with efficient rendering, ensuring a smooth and responsive experience.
